@@ -5,7 +5,7 @@
     
     <!-- Página principal -->
     <url>
-        <loc>https://urbanhouse.com/</loc>
+        <loc>https://urbanhouse.world/</loc>
         <lastmod>2025-04-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -18,7 +18,7 @@
     
     <!-- Sección Lanzamientos -->
     <url>
-        <loc>https://urbanhouse.com/#releases</loc>
+        <loc>https://urbanhouse.world/#releases</loc>
         <lastmod>2025-04-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -26,7 +26,7 @@
     
     <!-- Sección Demos -->
     <url>
-        <loc>https://urbanhouse.com/#demos</loc>
+        <loc>https://urbanhouse.world/#demos</loc>
         <lastmod>2025-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -34,7 +34,7 @@
     
     <!-- Sección Contacto -->
     <url>
-        <loc>https://urbanhouse.com/#footer</loc>
+        <loc>https://urbanhouse.world/#footer</loc>
         <lastmod>2025-04-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
