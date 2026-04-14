@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Urban House Record Label: Sello discográfico independiente de música House y urbana. Escucha nuestros últimos lanzamientos, conoce a nuestros artistas y envía tu demo.">
-    <meta name="keywords" content="Urban House, record label, sello discográfico, música house, lanzamientos, demos, artistas, Venezuela">
+    <meta name="keywords" content="Urban House, record label, sello discográfico, música house, lanzamientos, demos, artistas, Venezuela, house music, electronic label">
     <meta name="author" content="Urban House Records">
     <meta name="robots" content="index, follow">
     <title>Urban House | Sello Discográfico · House Music</title>
+    
+    <!-- CRONITOR RUM - REAL USER MONITORING -->
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+        window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+        cronitor('config', { clientKey: '32ced000d238ed8b11b1d165c60d36d5' });
+    </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -94,12 +102,12 @@
             align-items: center;
             text-align: center;
             border-bottom: 2px solid var(--brand-gold);
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('img/Diseño sin título (5).png') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80') center/cover;
             margin-top: 0;
             position: relative;
         }
 
-        /* Logo flotante decorativo en hero (opcional) */
+        /* Logo flotante decorativo en hero */
         .hero-logo-accent {
             position: absolute;
             bottom: 30px;
@@ -107,6 +115,10 @@
             opacity: 0.6;
             width: 70px;
             transition: 0.2s;
+        }
+
+        .hero-logo-accent:hover {
+            opacity: 0.95;
         }
 
         h1 {
@@ -281,7 +293,7 @@
 </head>
 <body>
 
-    <!-- Barra de navegación con logo integrado (lado izquierdo) -->
+    <!-- Barra de navegación con logo integrado -->
     <div class="glass-nav">
         <div class="nav-logo">
             <img src="img/Logo - Urban House.png" alt="Urban House Record Label Logo" onerror="this.onerror=null; this.src='https://placehold.co/400x200?text=Urban+House';">
@@ -297,7 +309,7 @@
     <header>
         <h1>URBAN HOUSE</h1>
         <div class="label-type">RECORD LABEL · CARACAS</div>
-        <!-- Logo colocado creativamente en la esquina inferior derecha del hero -->
+        <!-- Logo creativo en esquina inferior derecha del hero -->
         <img src="img/Logo - Urban House.png" alt="Urban House Signature Logo" class="hero-logo-accent" onerror="this.style.display='none'">
     </header>
 
@@ -308,7 +320,7 @@
             <!-- Release 1 -->
             <div class="release-card">
                 <div class="release-img">
-                    <img src="img/11dacdb1387f918ab5623780b7159f7e (1).jpg" alt="Cover Art - Track Urban House" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=Cover+Art'">
+                    <img src="img/11dacdb1387f918ab5623780b7159f7e (1).jpg" alt="Cover Art - Midnight Pulse Track" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=Cover+Art'">
                 </div>
                 <div class="release-info">
                     <span class="release-title">Midnight Pulse</span>
@@ -318,7 +330,7 @@
             <!-- Release 2 -->
             <div class="release-card">
                 <div class="release-img">
-                    <img src="img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg" alt="EP Cover - House Essentials" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=EP+Cover'">
+                    <img src="img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg" alt="EP Cover - Latido House Essentials" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=EP+Cover'">
                 </div>
                 <div class="release-info">
                     <span class="release-title">Latido House EP</span>
@@ -328,7 +340,7 @@
             <!-- Release 3 -->
             <div class="release-card">
                 <div class="release-img">
-                    <img src="img/e82955ab601fd210a1988c120cfb522b (1).jpg" alt="Single Verano - Portada" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=Summer+Single'">
+                    <img src="img/e82955ab601fd210a1988c120cfb522b (1).jpg" alt="Single Verano - Sunset Groove Cover" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=Summer+Single'">
                 </div>
                 <div class="release-info">
                     <span class="release-title">Sunset Groove</span>
@@ -359,7 +371,7 @@
         <p style="margin-top: 12px; font-size: 0.7rem;">Sello independiente comprometido con la nueva música house.</p>
     </footer>
 
-    <!-- Agregar microdatos SEO y optimización extra -->
+    <!-- Microdatos SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -381,11 +393,10 @@
     }
     </script>
 
-    <!-- Pequeño script para manejar carga de imágenes y suavizado -->
+    <!-- Script para efectos y carga suave de imágenes -->
     <script>
         (function() {
-            // Prevenir que imágenes rotas arruinen el diseño, ya hay fallback en onerror.
-            // También añadimos una clase de fade para transición suave.
+            // Efecto fade para imágenes
             const images = document.querySelectorAll('.release-img img');
             images.forEach(img => {
                 img.style.opacity = '0';
@@ -397,7 +408,8 @@
                     img.style.opacity = '1';
                 }
             });
-            // Pequeño efecto scroll suave para la navegación
+            
+            // Scroll suave para navegación
             const links = document.querySelectorAll('.nav-links a');
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -411,12 +423,6 @@
                     }
                 });
             });
-            // efecto sutil para el logo en el hero
-            const heroLogo = document.querySelector('.hero-logo-accent');
-            if (heroLogo) {
-                heroLogo.addEventListener('mouseenter', () => heroLogo.style.opacity = '0.95');
-                heroLogo.addEventListener('mouseleave', () => heroLogo.style.opacity = '0.6');
-            }
         })();
     </script>
 </body>
