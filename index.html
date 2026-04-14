@@ -3,14 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags SEO básicos -->
     <meta name="description" content="Urban House Record Label: Sello discográfico independiente de música House y urbana. Escucha nuestros últimos lanzamientos, conoce a nuestros artistas y envía tu demo.">
-    <meta name="keywords" content="Urban House, record label, sello discográfico, música house, lanzamientos, demos, artistas, Venezuela, house music, electronic label">
+    <meta name="keywords" content="Urban House, record label, sello discográfico, música house, lanzamientos, demos, artistas, Venezuela, house music, electronic label, deep house, latin house">
     <meta name="author" content="Urban House Records">
     <meta name="robots" content="index, follow">
-    <title>Urban House | Sello Discográfico · House Music</title>
-
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="VE-A">
+    <meta name="geo.placename" content="Caracas">
+    <meta name="geo.position" content="10.480594;-66.903606">
+    <meta name="ICBM" content="10.480594, -66.903606">
+    
+    <title>Urban House | Sello Discográfico de House Music · Caracas</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://urbanhouse.com/">
+    
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Urban House | Sello Discográfico de House Music">
+    <meta property="og:description" content="Sello discográfico independiente de música house y urbana en Caracas, Venezuela. Lanzamientos exclusivos, artistas y convocatoria de demos.">
+    <meta property="og:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
+    <meta property="og:image:alt" content="Urban House Record Label Logo">
+    <meta property="og:url" content="https://urbanhouse.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Urban House Records">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Urban House | Sello Discográfico de House Music">
+    <meta name="twitter:description" content="Sello discográfico independiente de música house y urbana en Caracas, Venezuela.">
+    <meta name="twitter:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/urh.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/urh.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/urh.png">
     <link rel="shortcut icon" type="image/png" href="img/urh.png">
     
@@ -21,7 +49,9 @@
         cronitor('config', { clientKey: '32ced000d238ed8b11b1d165c60d36d5' });
     </script>
     
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-black: #050505;
@@ -165,6 +195,20 @@
             letter-spacing: 1px;
         }
 
+        /* Texto introductorio SEO */
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: -40px auto 60px auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--gray-sub);
+        }
+
+        .intro-text strong {
+            color: var(--brand-gold);
+        }
+
         /* Grid de Lanzamientos/Artistas con imagenes reales */
         .release-grid {
             display: grid;
@@ -222,6 +266,30 @@
             color: var(--brand-gold); 
             font-size: 0.9rem;
             letter-spacing: 0.5px;
+        }
+
+        /* Botón ver más */
+        .view-more {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .btn-outline {
+            color: var(--brand-gold);
+            text-decoration: none;
+            border: 1px solid var(--brand-gold);
+            padding: 12px 30px;
+            border-radius: 40px;
+            transition: all 0.3s;
+            display: inline-block;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+        
+        .btn-outline:hover {
+            background: var(--brand-gold);
+            color: black;
         }
 
         /* Demo Submission */
@@ -293,6 +361,8 @@
             section { padding: 60px 5%; }
             h2 { font-size: 1.6rem; }
             .demo-box h3 { font-size: 1.3rem; }
+            .intro-text { font-size: 1rem; margin: -20px auto 40px auto; }
+            .social a { margin: 0 12px; font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -301,7 +371,7 @@
 <!-- Barra de navegación con logo integrado -->
 <div class="glass-nav">
     <div class="nav-logo">
-        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Record Label Logo" onerror="this.onerror=null; this.src='https://placehold.co/400x200?text=Urban+House';">
+        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Record Label Logo - Sello discográfico de música house">
         <span style="font-weight: bold; letter-spacing: 1px; font-size: 0.9rem;"></span>
     </div>
     <div class="nav-links">
@@ -311,125 +381,137 @@
     </div>
 </div>
 
-    <header>
-        <h1>URBAN HOUSE</h1>
-        <div class="label-type">RECORD LABEL · CARACAS</div>
-        <!-- Logo creativo en esquina inferior derecha del hero -->
-        <img src="" alt="" class="hero-logo-accent" onerror="this.style.display='none'">
-    </header>
+<header>
+    <h1>URBAN HOUSE</h1>
+    <div class="label-type">RECORD LABEL · CARACAS</div>
+    <!-- Logo creativo en esquina inferior derecha del hero -->
+    <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Records Logo" class="hero-logo-accent">
+</header>
 
-    <!-- Sección de lanzamientos con imágenes reales -->
-    <section id="releases">
-        <h2>Últimos Lanzamientos</h2>
-        <div class="release-grid">
-            <!-- Release 1 -->
-            <div class="release-card">
-                <div class="release-img">
-                    <img src="img/11dacdb1387f918ab5623780b7159f7e (1).jpg" alt="Cover Art - Midnight Pulse Track" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=Cover+Art'">
-                </div>
-                <div class="release-info">
-                    <span class="release-title">Midnight Pulse</span>
-                    <span class="release-artist">DJ Niko & Urban Soul</span>
-                </div>
+<!-- Texto introductorio SEO -->
+<div class="intro-text">
+    <p><strong>Urban House Records</strong> es el sello discográfico venezolano que impulsa el talento emergente en la escena <strong>House, Deep House y música urbana</strong>. Con distribución global en Beatport y Traxsource, hemos posicionado a nuestros artistas en todo el mundo. Descubre nuestros últimos lanzamientos y sé parte de la familia Urban House.</p>
+</div>
+
+<!-- Sección de lanzamientos con imágenes reales -->
+<section id="releases">
+    <h2>🎧 Últimos Lanzamientos</h2>
+    <div class="release-grid">
+        <!-- Release 1 -->
+        <div class="release-card">
+            <div class="release-img">
+                <img src="img/11dacdb1387f918ab5623780b7159f7e (1).jpg" alt="Portada del sencillo Midnight Pulse - Urban House Records" loading="lazy">
             </div>
-            <!-- Release 2 -->
-            <div class="release-card">
-                <div class="release-img">
-                    <img src="img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg" alt="EP Cover - Latido House Essentials" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=EP+Cover'">
-                </div>
-                <div class="release-info">
-                    <span class="release-title">Latido House EP</span>
-                    <span class="release-artist">Urban House All Stars</span>
-                </div>
-            </div>
-            <!-- Release 3 -->
-            <div class="release-card">
-                <div class="release-img">
-                    <img src="img/e82955ab601fd210a1988c120cfb522b (1).jpg" alt="Single Verano - Sunset Groove Cover" loading="lazy" onerror="this.src='https://placehold.co/600x600/222/white?text=Summer+Single'">
-                </div>
-                <div class="release-info">
-                    <span class="release-title">Sunset Groove</span>
-                    <span class="release-artist">Carla M. & The Lab</span>
-                </div>
+            <div class="release-info">
+                <span class="release-title">Midnight Pulse</span>
+                <span class="release-artist">DJ Niko & Urban Soul</span>
             </div>
         </div>
-    </section>
-
-    <!-- Sección de Demos y Fichaje -->
-    <section id="demos">
-        <div class="demo-box">
-            <h3>¿QUIERES FIRMAR CON NOSOTROS?</h3>
-            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Estamos buscando nuevos talentos en la escena House, Deep House, Melodic, Etc.</p>
-            <a href="mailto:demosurbanhouse@gmail.com" class="btn-dark">ENVIAR DEMO</a>
-            <p style="margin-top: 20px; font-size: 0.8rem;">MP3 / WAV · Links a SoundCloud o Dropbox</p>
+        <!-- Release 2 -->
+        <div class="release-card">
+            <div class="release-img">
+                <img src="img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg" alt="EP Cover - Latido House Essentials de Urban House Records" loading="lazy">
+            </div>
+            <div class="release-info">
+                <span class="release-title">Latido House EP</span>
+                <span class="release-artist">Urban House All Stars</span>
+            </div>
         </div>
-    </section>
+        <!-- Release 3 -->
+        <div class="release-card">
+            <div class="release-img">
+                <img src="img/e82955ab601fd210a1988c120cfb522b (1).jpg" alt="Single Verano - Sunset Groove Cover música house" loading="lazy">
+            </div>
+            <div class="release-info">
+                <span class="release-title">Sunset Groove</span>
+                <span class="release-artist">Carla M. & The Lab</span>
+            </div>
+        </div>
+    </div>
+    <div class="view-more">
+        <a href="#" class="btn-outline">VER TODOS LOS LANZAMIENTOS →</a>
+    </div>
+</section>
+
+<!-- Sección de Demos y Fichaje -->
+<section id="demos">
+    <div class="demo-box">
+        <h3>📀 ¿QUIERES FIRMAR CON NOSOTROS?</h3>
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Estamos buscando nuevos talentos en la escena House, Deep House, Melodic, Techno y música urbana.</p>
+        <a href="mailto:demosurbanhouse@gmail.com" class="btn-dark">ENVIAR DEMO</a>
+        <p style="margin-top: 20px; font-size: 0.8rem;">MP3 / WAV · Links a SoundCloud o Dropbox · Envíos sin costo</p>
+    </div>
+</section>
 
 <footer id="footer">
     <div class="social">
-        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener">INSTAGRAM</a>
-        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener">BEATPORT</a>
-        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener">TRAXSOURCE</a>
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer">BEATPORT</a>
+        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer">TRAXSOURCE</a>
     </div>
-        <p>&copy; 2022 URBAN HOUSE RECORDS · Caracas, Venezuela.</p>
-        <p style="margin-top: 12px; font-size: 0.7rem;">Sello independiente.</p>
-    </footer>
+    <p>&copy; 2025 URBAN HOUSE RECORDS · Caracas, Venezuela</p>
+    <p style="margin-top: 12px; font-size: 0.7rem;">Sello discográfico independiente de música house · Todos los derechos reservados</p>
+</footer>
 
-    <!-- Microdatos SEO -->
+<!-- Schema.org / JSON-LD optimizado para SEO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   "name": "Urban House Record Label",
   "alternateName": "Urban House Records",
-  "description": "Sello discográfico independiente de música house y urbana con base en Caracas, Venezuela...",
+  "description": "Sello discográfico independiente de música house y urbana con base en Caracas, Venezuela. Distribución digital en Beatport y Traxsource. Convocatoria abierta para nuevos talentos.",
+  "url": "https://urbanhouse.com/",
+  "logo": "img/Logo_Urban_House_blanco-removebg-preview.png",
+  "image": "img/urh.png",
+  "foundingDate": "2022",
+  "foundingLocation": "Caracas, Venezuela",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Caracas",
-    "addressCountry": "Venezuela"
+    "addressCountry": "VE"
   },
   "sameAs": [
-    "https://www.instagram.com/urbanhouserecords",
-    "https://www.beatport.com/label/urban-house",
-    "https://open.spotify.com/playlist/37i9dQZF1DX6J5NfMJS675"
+    "https://www.instagram.com/urban_house.vzla/",
+    "https://www.beatport.com/es/label/urban-house/148584",
+    "https://www.traxsource.com/label/75397/urban-house"
   ],
-  "logo": "img/Logo_Urban_House_blanco-removebg-preview.png",
-  "image": "img/urh.png",
-  "genre": ["House Music", "Deep House", "Urban", "Electronic"]
+  "genre": ["House Music", "Deep House", "Urban", "Electronic", "Latin House", "Melodic House"],
+  "email": "demosurbanhouse@gmail.com"
 }
 </script>
 
-    <!-- Script para efectos y carga suave de imágenes -->
-    <script>
-        (function() {
-            // Efecto fade para imágenes
-            const images = document.querySelectorAll('.release-img img');
-            images.forEach(img => {
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.4s ease';
-                img.addEventListener('load', function() {
-                    this.style.opacity = '1';
-                });
-                if (img.complete) {
-                    img.style.opacity = '1';
+<!-- Script para efectos y carga suave de imágenes -->
+<script>
+    (function() {
+        // Efecto fade para imágenes
+        const images = document.querySelectorAll('.release-img img');
+        images.forEach(img => {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.4s ease';
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            if (img.complete) {
+                img.style.opacity = '1';
+            }
+        });
+        
+        // Scroll suave para navegación
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
             });
-            
-            // Scroll suave para navegación
-            const links = document.querySelectorAll('.nav-links a');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId && targetId.startsWith('#')) {
-                        e.preventDefault();
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }
-                });
-            });
-        })();
-    </script>
+        });
+    })();
+</script>
 </body>
 </html>
