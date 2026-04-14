@@ -12,23 +12,19 @@
     <meta name="language" content="Spanish">
     <meta name="geo.region" content="VE-A">
     <meta name="geo.placename" content="Caracas">
-    <meta name="geo.position" content="10.480594;-66.903606">
-    <meta name="ICBM" content="10.480594, -66.903606">
     
-    <title>Urban House | Sello Discográfico de House Music · Caracas</title>
+    <title>Urban House | Sello Discográfico de House Music</title>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://urbanhouse.com/">
     
     <!-- Open Graph / Redes Sociales -->
     <meta property="og:title" content="Urban House | Sello Discográfico de House Music">
-    <meta property="og:description" content="Sello discográfico independiente de música house y urbana en Caracas, Venezuela. Lanzamientos exclusivos, artistas y convocatoria de demos.">
+    <meta property="og:description" content="Sello discográfico independiente de música house y urbana en Caracas, Venezuela.">
     <meta property="og:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
-    <meta property="og:image:alt" content="Urban House Record Label Logo">
     <meta property="og:url" content="https://urbanhouse.com/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:site_name" content="Urban House Records">
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -38,11 +34,10 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/urh.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/urh.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/urh.png">
     <link rel="shortcut icon" type="image/png" href="img/urh.png">
     
-    <!-- CRONITOR RUM - REAL USER MONITORING -->
+    <!-- CRONITOR RUM -->
     <script async src="https://rum.cronitor.io/script.js"></script>
     <script>
         window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
@@ -50,7 +45,7 @@
     </script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -58,7 +53,9 @@
             --brand-gold: #c5a059;
             --pure-white: #ffffff;
             --gray-sub: #a0a0a0;
+            --gray-light: #e0e0e0;
             --card-bg: #0c0c0c;
+            --transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         * {
@@ -70,26 +67,29 @@
         body {
             background-color: var(--primary-black);
             color: var(--pure-white);
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Navegación creativa con logo integrado */
+        /* Navegación */
         .glass-nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(5, 5, 5, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 12px 5%;
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
         .nav-logo {
@@ -101,27 +101,28 @@
         .nav-logo img {
             height: 48px;
             width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-            transition: transform 0.2s ease;
+            transition: var(--transition);
         }
 
         .nav-logo img:hover {
             transform: scale(1.02);
+            opacity: 0.9;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
         }
 
         .nav-links a {
             color: var(--pure-white);
             text-decoration: none;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             font-size: 0.85rem;
-            transition: color 0.2s;
+            transition: var(--transition);
             text-transform: uppercase;
+            font-family: 'Space Grotesk', monospace;
         }
 
         .nav-links a:hover {
@@ -130,114 +131,133 @@
 
         /* Hero Section */
         header {
-            height: 85vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             border-bottom: 2px solid var(--brand-gold);
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('img/istockphoto-1822889082-612x612.jpg') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('img/istockphoto-1822889082-612x612.jpg') center/cover;
             margin-top: 0;
             position: relative;
+            padding: 120px 20px 80px 20px;
         }
 
-        /* Logo flotante decorativo en hero */
         .hero-logo-accent {
             position: absolute;
             bottom: 30px;
             right: 30px;
-            opacity: 0.6;
-            width: 70px;
-            transition: 0.2s;
+            opacity: 0.5;
+            width: 65px;
+            transition: var(--transition);
         }
 
         .hero-logo-accent:hover {
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
         h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4.5rem;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 5rem;
             margin: 0;
-            letter-spacing: 8px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 30%, var(--brand-gold) 80%);
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 20%, var(--brand-gold) 80%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            margin-bottom: 20px;
         }
 
         .label-type {
             color: var(--brand-gold);
-            letter-spacing: 12px;
+            letter-spacing: 8px;
             font-size: 0.85rem;
-            margin-top: 16px;
-            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: 500;
             text-transform: uppercase;
+            font-family: 'Space Grotesk', monospace;
         }
 
         /* Secciones */
         section {
-            padding: 90px 5%;
+            padding: 80px 5%;
             max-width: 1300px;
             margin: 0 auto;
         }
 
         h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.8rem;
             text-transform: uppercase;
-            border-left: 5px solid var(--brand-gold);
+            border-left: 4px solid var(--brand-gold);
             padding-left: 20px;
             margin-bottom: 50px;
-            letter-spacing: 1px;
+            letter-spacing: 0px;
+            font-weight: 600;
         }
 
-        /* Texto introductorio SEO */
-        .intro-text {
+        /* Texto introductorio - MEJOR ESPACIADO */
+        .intro-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px 40px 20px;
             text-align: center;
-            max-width: 800px;
-            margin: -40px auto 60px auto;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        }
+
+        .intro-title {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1rem;
+            color: var(--brand-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .intro-text {
             font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--gray-sub);
+            line-height: 1.8;
+            color: #c8c8c8;
+            font-weight: 400;
+            max-width: 750px;
+            margin: 0 auto;
         }
 
         .intro-text strong {
             color: var(--brand-gold);
+            font-weight: 600;
         }
 
-        /* Grid de Lanzamientos/Artistas con imagenes reales */
+        /* Grid de Lanzamientos */
         .release-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 35px;
         }
 
         .release-card {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border: 1px solid #222;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: var(--transition);
+            border: 1px solid #1a1a1a;
         }
 
         .release-card:hover {
             border-color: var(--brand-gold);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.6);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
         }
 
         .release-img {
             width: 100%;
             aspect-ratio: 1 / 1;
             background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
         }
 
@@ -249,178 +269,210 @@
         }
 
         .release-card:hover .release-img img {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .release-info {
-            padding: 22px;
+            padding: 20px;
         }
 
         .release-title { 
-            font-weight: bold; 
-            font-size: 1.2rem; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
+            font-family: 'Space Grotesk', monospace;
         }
         .release-artist { 
             color: var(--brand-gold); 
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            font-weight: 500;
         }
 
         /* Botón ver más */
         .view-more {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 45px;
         }
         
         .btn-outline {
             color: var(--brand-gold);
             text-decoration: none;
             border: 1px solid var(--brand-gold);
-            padding: 12px 30px;
+            padding: 10px 28px;
             border-radius: 40px;
-            transition: all 0.3s;
+            transition: var(--transition);
             display: inline-block;
             font-weight: 500;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            font-size: 0.8rem;
+            font-family: 'Space Grotesk', monospace;
         }
         
         .btn-outline:hover {
             background: var(--brand-gold);
             color: black;
+            transform: translateY(-2px);
         }
 
         /* Demo Submission */
         .demo-box {
             background: linear-gradient(135deg, #b48a3b 0%, #c5a059 100%);
-            color: black;
-            padding: 55px 40px;
+            color: #0a0a0a;
+            padding: 50px 40px;
             text-align: center;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
         }
 
         .demo-box h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .demo-box p {
+            font-weight: 500;
         }
 
         .btn-dark {
             background: #0a0a0a;
             color: white;
-            padding: 14px 38px;
+            padding: 12px 35px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             display: inline-block;
             margin-top: 20px;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1.5px;
             border-radius: 40px;
-            transition: all 0.2s;
-            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+            font-family: 'Space Grotesk', monospace;
         }
 
         .btn-dark:hover {
             background: #000;
             transform: scale(1.02);
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            border-color: var(--brand-gold);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         footer {
             padding: 50px 5%;
             text-align: center;
-            border-top: 1px solid #222;
+            border-top: 1px solid #1a1a1a;
             color: var(--gray-sub);
             background: #020202;
+            margin-top: 40px;
         }
 
-        .social { margin-bottom: 24px; }
+        .social { 
+            margin-bottom: 24px; 
+        }
+        
         .social a { 
             color: var(--pure-white); 
-            margin: 0 18px; 
+            margin: 0 20px; 
             text-decoration: none; 
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', monospace;
         }
+        
         .social a:hover {
             color: var(--brand-gold);
         }
 
+        footer p {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
         /* Responsive */
         @media (max-width: 780px) {
-            h1 { font-size: 2.4rem; letter-spacing: 4px; }
-            .glass-nav { flex-direction: column; gap: 12px; padding: 12px 5%; }
-            .nav-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2.5rem; letter-spacing: 3px; margin-bottom: 15px; }
+            .label-type { letter-spacing: 5px; font-size: 0.65rem; margin-bottom: 25px; }
+            .glass-nav { flex-direction: column; gap: 15px; padding: 15px 5%; }
+            .nav-links { gap: 25px; flex-wrap: wrap; justify-content: center; }
             .hero-logo-accent { width: 45px; bottom: 15px; right: 15px; }
-            section { padding: 60px 5%; }
-            h2 { font-size: 1.6rem; }
-            .demo-box h3 { font-size: 1.3rem; }
-            .intro-text { font-size: 1rem; margin: -20px auto 40px auto; }
-            .social a { margin: 0 12px; font-size: 0.75rem; }
+            section { padding: 50px 5%; }
+            h2 { font-size: 1.4rem; padding-left: 15px; }
+            .demo-box h3 { font-size: 1.2rem; }
+            .intro-wrapper { padding: 40px 15px 30px 15px; }
+            .intro-text { font-size: 0.95rem; line-height: 1.7; }
+            .intro-title { font-size: 0.8rem; letter-spacing: 3px; }
+            .social a { margin: 0 12px; font-size: 0.7rem; }
+            .release-grid { gap: 25px; }
+            header { padding: 100px 20px 60px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; letter-spacing: 2px; }
+            .label-type { letter-spacing: 3px; font-size: 0.55rem; }
+            .nav-links { gap: 18px; }
+            .nav-links a { font-size: 0.7rem; }
+            .demo-box { padding: 35px 20px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Barra de navegación con logo integrado -->
+<!-- Barra de navegación -->
 <div class="glass-nav">
     <div class="nav-logo">
-        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Record Label Logo - Sello discográfico de música house">
-        <span style="font-weight: bold; letter-spacing: 1px; font-size: 0.9rem;"></span>
+        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Record Label Logo">
     </div>
     <div class="nav-links">
-        <a href="#releases">LANZAMIENTOS</a>
-        <a href="#demos">DEMOS</a>
-        <a href="#footer">CONTACTO</a>
+        <a href="#releases">Lanzamientos</a>
+        <a href="#demos">Demos</a>
+        <a href="#footer">Contacto</a>
     </div>
 </div>
 
 <header>
     <h1>URBAN HOUSE</h1>
     <div class="label-type">RECORD LABEL · CARACAS</div>
-    <!-- Logo creativo en esquina inferior derecha del hero -->
-    <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Records Logo" class="hero-logo-accent">
+    <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Records" class="hero-logo-accent">
 </header>
 
-<!-- Texto introductorio SEO -->
-<div class="intro-text">
-    <p><strong>Urban House Records</strong> es el sello discográfico venezolano que impulsa el talento emergente en la escena <strong>House, Deep House y música urbana</strong>. Con distribución global en Beatport y Traxsource, hemos posicionado a nuestros artistas en todo el mundo. Descubre nuestros últimos lanzamientos y sé parte de la familia Urban House.</p>
+<!-- Texto introductorio - AHORA CON BUEN ESPACIADO -->
+<div class="intro-wrapper">
+    <div class="intro-title">Urban House Records</div>
+    <div class="intro-text">
+        <strong>Urban House Records</strong> es el sello discográfico venezolano que impulsa el talento emergente en la escena <strong>House, Deep House y música urbana</strong>. Con distribución global en Beatport y Traxsource, posicionamos a nuestros artistas en todo el mundo.
+    </div>
 </div>
 
-<!-- Sección de lanzamientos con imágenes reales -->
+<!-- Sección de lanzamientos -->
 <section id="releases">
-    <h2>🎧 Últimos Lanzamientos</h2>
+    <h2>Últimos Lanzamientos</h2>
     <div class="release-grid">
-        <!-- Release 1 -->
         <div class="release-card">
             <div class="release-img">
-                <img src="img/11dacdb1387f918ab5623780b7159f7e (1).jpg" alt="Portada del sencillo Midnight Pulse - Urban House Records" loading="lazy">
+                <img src="img/11dacdb1387f918ab5623780b7159f7e (1).jpg" alt="Midnight Pulse cover" loading="lazy">
             </div>
             <div class="release-info">
                 <span class="release-title">Midnight Pulse</span>
                 <span class="release-artist">DJ Niko & Urban Soul</span>
             </div>
         </div>
-        <!-- Release 2 -->
         <div class="release-card">
             <div class="release-img">
-                <img src="img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg" alt="EP Cover - Latido House Essentials de Urban House Records" loading="lazy">
+                <img src="img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg" alt="Latido House EP cover" loading="lazy">
             </div>
             <div class="release-info">
                 <span class="release-title">Latido House EP</span>
                 <span class="release-artist">Urban House All Stars</span>
             </div>
         </div>
-        <!-- Release 3 -->
         <div class="release-card">
             <div class="release-img">
-                <img src="img/e82955ab601fd210a1988c120cfb522b (1).jpg" alt="Single Verano - Sunset Groove Cover música house" loading="lazy">
+                <img src="img/e82955ab601fd210a1988c120cfb522b (1).jpg" alt="Sunset Groove cover" loading="lazy">
             </div>
             <div class="release-info">
                 <span class="release-title">Sunset Groove</span>
@@ -429,41 +481,40 @@
         </div>
     </div>
     <div class="view-more">
-        <a href="#" class="btn-outline">VER TODOS LOS LANZAMIENTOS →</a>
+        <a href="#" class="btn-outline">Ver todos →</a>
     </div>
 </section>
 
-<!-- Sección de Demos y Fichaje -->
+<!-- Sección de Demos -->
 <section id="demos">
     <div class="demo-box">
-        <h3>📀 ¿QUIERES FIRMAR CON NOSOTROS?</h3>
-        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Estamos buscando nuevos talentos en la escena House, Deep House, Melodic, Techno y música urbana.</p>
-        <a href="mailto:demosurbanhouse@gmail.com" class="btn-dark">ENVIAR DEMO</a>
-        <p style="margin-top: 20px; font-size: 0.8rem;">MP3 / WAV · Links a SoundCloud o Dropbox · Envíos sin costo</p>
+        <h3>¿Quieres firmar con nosotros?</h3>
+        <p>Buscamos nuevos talentos en House, Deep House, Melodic, Techno y música urbana.</p>
+        <a href="mailto:demosurbanhouse@gmail.com" class="btn-dark">Enviar Demo</a>
+        <p style="margin-top: 20px; font-size: 0.75rem; opacity: 0.8;">MP3 / WAV · Links a SoundCloud o Dropbox</p>
     </div>
 </section>
 
 <footer id="footer">
     <div class="social">
-        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer">BEATPORT</a>
-        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer">TRAXSOURCE</a>
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer">Beatport</a>
+        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer">Traxsource</a>
     </div>
-    <p>&copy; 2025 URBAN HOUSE RECORDS · Caracas, Venezuela</p>
-    <p style="margin-top: 12px; font-size: 0.7rem;">Sello discográfico independiente de música house · Todos los derechos reservados</p>
+    <p>&copy; 2025 Urban House Records · Caracas, Venezuela</p>
+    <p style="margin-top: 8px;">Sello discográfico independiente</p>
 </footer>
 
-<!-- Schema.org / JSON-LD optimizado para SEO -->
+<!-- Schema.org / JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   "name": "Urban House Record Label",
   "alternateName": "Urban House Records",
-  "description": "Sello discográfico independiente de música house y urbana con base en Caracas, Venezuela. Distribución digital en Beatport y Traxsource. Convocatoria abierta para nuevos talentos.",
+  "description": "Sello discográfico independiente de música house y urbana con base en Caracas, Venezuela.",
   "url": "https://urbanhouse.com/",
   "logo": "img/Logo_Urban_House_blanco-removebg-preview.png",
-  "image": "img/urh.png",
   "foundingDate": "2022",
   "foundingLocation": "Caracas, Venezuela",
   "address": {
@@ -476,15 +527,14 @@
     "https://www.beatport.com/es/label/urban-house/148584",
     "https://www.traxsource.com/label/75397/urban-house"
   ],
-  "genre": ["House Music", "Deep House", "Urban", "Electronic", "Latin House", "Melodic House"],
+  "genre": ["House Music", "Deep House", "Urban", "Electronic", "Latin House"],
   "email": "demosurbanhouse@gmail.com"
 }
 </script>
 
-<!-- Script para efectos y carga suave de imágenes -->
 <script>
     (function() {
-        // Efecto fade para imágenes
+        // Fade para imágenes
         const images = document.querySelectorAll('.release-img img');
         images.forEach(img => {
             img.style.opacity = '0';
@@ -497,7 +547,7 @@
             }
         });
         
-        // Scroll suave para navegación
+        // Scroll suave
         const links = document.querySelectorAll('.nav-links a');
         links.forEach(link => {
             link.addEventListener('click', function(e) {
