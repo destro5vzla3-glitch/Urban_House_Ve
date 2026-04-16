@@ -1,43 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
-    <!-- Página principal -->
     <url>
         <loc>https://urbanhouse.world/</loc>
-        <lastmod>2025-04-14</lastmod>
+        <lastmod>2026-04-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://urbanhouse.com/img/Logo_Urban_House_blanco-removebg-preview.png</image:loc>
+            <image:loc>https://urbanhouse.world/img/Logo_Urban_House_blanco-removebg-preview.png</image:loc>
             <image:title>Urban House Record Label Logo</image:title>
             <image:caption>Urban House - Sello discográfico de música house</image:caption>
         </image:image>
-    </url>
-    
-    <!-- Sección Lanzamientos -->
-    <url>
-        <loc>https://urbanhouse.world/#releases</loc>
-        <lastmod>2025-04-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Sección Demos -->
-    <url>
-        <loc>https://urbanhouse.world/#demos</loc>
-        <lastmod>2025-04-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Sección Contacto -->
-    <url>
-        <loc>https://urbanhouse.world/#footer</loc>
-        <lastmod>2025-04-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
     </url>
     
 </urlset>
