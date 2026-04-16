@@ -177,20 +177,47 @@
         .release-title { font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 5px; font-family: 'Space Grotesk', monospace; }
         .release-artist { color: var(--brand-gold); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
 
-        /* Próximos Lanzamientos Grid */
-        .upcoming-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .upcoming-card {
-            border: 1px dashed var(--gray-sub);
-            border-radius: 16px; padding: 30px 20px; text-align: center;
-            background: rgba(255,255,255,0.02); transition: var(--transition);
-        }
-        .upcoming-card:hover { border-color: var(--brand-gold); background: rgba(197, 160, 89, 0.05); }
-        .upcoming-date { color: var(--brand-gold); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 15px; letter-spacing: 2px; }
-        .upcoming-icon { font-size: 2.5rem; color: #444; margin-bottom: 15px; }
+      /* Estilos para las imágenes de próximos lanzamientos */
+.upcoming-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    background: #1a1a1a;
+    border: 1px solid #222;
+}
+
+.upcoming-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Le da un toque de misterio/teaser */
+    transition: var(--transition);
+    filter: grayscale(30%);
+}
+
+.upcoming-card:hover .upcoming-img img {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.upcoming-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--brand-gold);
+    color: var(--primary-black);
+    padding: 5px 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
 
         /* Botones */
         .btn-outline {
@@ -299,8 +326,11 @@
     <h2><i class="fa-solid fa-calendar-days"></i> Próximos Lanzamientos</h2>
     <div class="upcoming-grid">
         
-        <div class="upcoming-card">
-            <div class="upcoming-icon"><i class="fa-solid fa-record-vinyl"></i></div>
+       <div class="upcoming-card">
+            <div class="upcoming-img">
+                <img src="img/tu-imagen-mayo.jpg" alt="ID - ID Cover" loading="lazy">
+                <div class="upcoming-badge">Pronto</div>
+            </div>
             <div class="upcoming-date">MAYO 2026</div>
             <h3 class="release-title" style="margin-bottom:10px;">ID - ID</h3>
             <span class="release-artist" style="justify-content: center;">Artista Exclusivo</span>
@@ -308,7 +338,10 @@
         </div>
 
         <div class="upcoming-card">
-            <div class="upcoming-icon"><i class="fa-solid fa-music"></i></div>
+            <div class="upcoming-img">
+                <img src="img/tu-imagen-junio.jpg" alt="Bironbass Vol 1 Cover" loading="lazy">
+                <div class="upcoming-badge">Pronto</div>
+            </div>
             <div class="upcoming-date">JUNIO 2026</div>
             <h3 class="release-title" style="margin-bottom:10px;">Bironbass Vol 1.</h3>
             <span class="release-artist" style="justify-content: center;">Varios Artistas</span>
