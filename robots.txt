@@ -1,23 +1,13 @@
 # robots.txt para Urban House Records
+
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://urbanhouse.com/sitemap.xml
+# No bloqueamos /img/ para que las portadas y el logo aparezcan en Google Images
 
-# Reglas específicas
-Disallow: /img/
-Disallow: /assets/
+# Sitemap actualizado a tu dominio real
+Sitemap: https://urbanhouse.world/sitemap.xml
 
-# Crawl delay para no sobrecargar el servidor
-Crawl-delay: 1
-
-# Googlebot específico
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Bingbot
+# Bingbot (Opcional, pero amigable)
 User-agent: Bingbot
-Allow: /
 Crawl-delay: 1
