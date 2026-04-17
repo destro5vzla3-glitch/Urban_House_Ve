@@ -30,7 +30,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navegación (Igual al index) */
+        /* Navegación */
         .glass-nav {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
             background: rgba(5, 5, 5, 0.92); backdrop-filter: blur(16px);
@@ -150,11 +150,10 @@
 
 <section class="demo-section">
     <div class="form-container">
-        <form action="https://formsubmit.co/demosurbanhouse@gmail.com" method="POST">
+        <form action="https://formsubmit.io/send/demosurbanhouse@gmail.com" method="POST">
             
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="¡NUEVO DEMO RECIBIDO! 🚀">
-            <input type="hidden" name="_next" value="https://urbanhouse.world/">
+            <input type="hidden" name="_redirect" value="https://urbanhouse.world/">
+            <input name="_formsubmit_id" type="text" style="display:none">
             
             <div class="form-group">
                 <label for="artistName">Nombre del Artista / Proyecto</label>
@@ -163,7 +162,7 @@
 
             <div class="form-group">
                 <label for="email">Correo Electrónico de Contacto</label>
-                <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@correo.com" required>
+                <input type="email" id="email" name="email" class="form-control" placeholder="tu@correo.com" required>
             </div>
 
             <div class="form-group">
