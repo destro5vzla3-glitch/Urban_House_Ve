@@ -5,9 +5,5 @@ Allow: /
 
 # No bloqueamos /img/ para que las portadas y el logo aparezcan en Google Images
 
-# Sitemap actualizado a tu dominio real
+# Sitemap oficial del dominio
 Sitemap: https://urbanhouse.world/sitemap.xml
-
-# Bingbot (Opcional, pero amigable)
-User-agent: Bingbot
-Crawl-delay: 1
