@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Demo | Urban House Records</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-black: #050505;
+            --brand-gold: #c5a059;
+            --pure-white: #ffffff;
+            --gray-sub: #a0a0a0;
+            --card-bg: #0c0c0c;
+            --input-bg: #151515;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--primary-black);
+            color: var(--pure-white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navegación (Igual al index) */
+        .glass-nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(5, 5, 5, 0.92); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 16px 5%; display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap;
+        }
+        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a {
+            color: var(--pure-white); text-decoration: none;
+            font-weight: 500; font-size: 0.85rem; transition: var(--transition);
+            text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+
+        /* Header Interno */
+        header.internal-header {
+            padding: 160px 20px 80px; text-align: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+        }
+        header.internal-header h1 {
+            font-family: 'Space Grotesk', monospace; font-size: 3.5rem;
+            color: var(--brand-gold); text-transform: uppercase; letter-spacing: 4px;
+        }
+        header.internal-header p {
+            color: var(--gray-sub); max-width: 600px; margin: 20px auto 0; font-size: 1.1rem;
+        }
+
+        /* Sección del Formulario */
+        .demo-section {
+            padding: 80px 5%; max-width: 800px; margin: 0 auto;
+        }
+        
+        .form-container {
+            background: var(--card-bg); padding: 50px; border-radius: 16px;
+            border: 1px solid #1a1a1a; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .form-group { margin-bottom: 25px; }
+        .form-group label {
+            display: block; margin-bottom: 10px; font-weight: 500;
+            font-family: 'Space Grotesk', monospace; color: var(--gray-sub);
+            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .form-control {
+            width: 100%; padding: 15px 20px; background: var(--input-bg);
+            border: 1px solid #222; border-radius: 8px; color: white;
+            font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-control:focus {
+            outline: none; border-color: var(--brand-gold);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
+        }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #b48a3b 0%, #c5a059 100%);
+            color: #0a0a0a; border: none; padding: 16px 40px; width: 100%;
+            border-radius: 8px; font-weight: 700; font-size: 1rem;
+            font-family: 'Space Grotesk', monospace; text-transform: uppercase;
+            letter-spacing: 2px; cursor: pointer; transition: var(--transition);
+            display: flex; justify-content: center; align-items: center; gap: 10px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-3px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+        }
+
+        /* Reglas y Requisitos */
+        .demo-rules {
+            margin-top: 50px; padding: 30px; background: rgba(197, 160, 89, 0.05);
+            border-left: 4px solid var(--brand-gold); border-radius: 0 8px 8px 0;
+        }
+        .demo-rules h3 {
+            font-family: 'Space Grotesk', monospace; color: var(--brand-gold);
+            margin-bottom: 15px; text-transform: uppercase; font-size: 1.1rem;
+        }
+        .demo-rules ul { list-style: none; color: #ccc; font-size: 0.95rem; }
+        .demo-rules ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .demo-rules ul li i { color: var(--brand-gold); }
+
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: 40px; }
+        .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
+        .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
+        .social a:hover { color: var(--brand-gold); }
+
+        @media (max-width: 780px) {
+            .glass-nav { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+            header.internal-header h1 { font-size: 2.5rem; }
+            .form-container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="glass-nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html#releases">Lanzamientos</a>
+        <a href="index.html#upcoming">Próximos</a>
+        <a href="index.html#aliados">Aliados</a>
+        <a href="samples.html">Samples</a>
+        <a href="demos.html" class="active">Demos</a>
+        <a href="eventos.html">Eventos</a>
+    </div>
+</div>
+
+<header class="internal-header">
+    <h1>Envía tu Demo</h1>
+    <p>Buscamos artistas innovadores en House, Deep House, Tech House, EDM y sonidos afines. Muestra tu talento al mundo.</p>
+</header>
+
+<section class="demo-section">
+    <div class="form-container">
+        <form action="https://formsubmit.co/demosurbanhouse@gmail.com" method="POST">
+            
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="¡NUEVO DEMO RECIBIDO! 🚀">
+            <input type="hidden" name="_next" value="https://urbanhouse.world/">
+            
+            <div class="form-group">
+                <label for="artistName">Nombre del Artista / Proyecto</label>
+                <input type="text" id="artistName" name="Artista" class="form-control" placeholder="Ej. Destro5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico de Contacto</label>
+                <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@correo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="demoLink">Enlace del Demo (SoundCloud / Dropbox / Drive)</label>
+                <input type="url" id="demoLink" name="Enlace" class="form-control" placeholder="https://soundcloud.com/..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensaje Adicional (Redes Sociales, detalles del track)</label>
+                <textarea id="message" name="Mensaje" class="form-control" placeholder="Cuéntanos un poco sobre la pista o déjanos tu Instagram..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <i class="fa-solid fa-paper-plane"></i> Enviar Demo
+            </button>
+        </form>
+    </div>
+
+    <div class="demo-rules">
+        <h3><i class="fa-solid fa-circle-exclamation"></i> Requisitos Importantes</h3>
+        <ul>
+            <li><i class="fa-solid fa-check"></i> Solo enlaces privados (SoundCloud en privado o links de descarga directa).</li>
+            <li><i class="fa-solid fa-check"></i> Asegúrate de que los enlaces de Google Drive/Dropbox tengan acceso abierto.</li>
+            <li><i class="fa-solid fa-check"></i> No envíes archivos adjuntos al correo.</li>
+            <li><i class="fa-solid fa-check"></i> Escuchamos todo el material, pero solo contactaremos si estamos interesados.</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <div class="social">
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
+        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-compact-disc"></i></a>
+    </div>
+    <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
+</footer>
+
+</body>
+</html>
