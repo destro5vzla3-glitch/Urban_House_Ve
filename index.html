@@ -85,7 +85,7 @@
             font-size: 0.85rem; transition: var(--transition);
             text-transform: uppercase; font-family: 'Space Grotesk', monospace;
         }
-        .nav-links a:hover { color: var(--brand-gold); }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
 
         /* Hero Section */
         header {
@@ -234,7 +234,7 @@
         .partners-track {
             display: flex; flex-shrink: 0; align-items: center;
             gap: 120px; padding-right: 120px; width: max-content;
-            animation: scroll-partners 40s linear infinite; /* Aumentado a 40s por tener más logos */
+            animation: scroll-partners 40s linear infinite; 
         }
         .partners-wrapper:hover .partners-track { animation-play-state: paused; }
         .partners-track img {
@@ -265,13 +265,14 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
 
 <div class="glass-nav">
     <div class="nav-logo">
-        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo">
+        <a href="index.html"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
     </div>
     <div class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
         <a href="#releases">Lanzamientos</a>
         <a href="#upcoming">Próximos</a>
         <a href="#aliados">Aliados</a>
