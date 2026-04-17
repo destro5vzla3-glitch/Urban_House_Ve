@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Descubre las próximas fiestas, showcases y eventos en vivo de Urban House Records. Únete a la mejor experiencia de música electrónica, House y Tech House en Caracas, Venezuela.">
+    <meta name="keywords" content="eventos música electrónica, fiestas house Caracas, Urban House Records eventos, DJ sets Venezuela, tech house, deep house, raves Caracas, Destro5">
+    <meta name="author" content="Urban House Records">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="VE-A">
+    <meta name="geo.placename" content="Caracas">
+    
+    <title>Eventos y Fiestas | Urban House Records</title>
+    
+    <link rel="canonical" href="https://urbanhouse.world/eventos.html">
+    
+    <meta property="og:title" content="Eventos | Urban House Records">
+    <meta property="og:description" content="Descubre nuestras próximas fiestas y showcases. La mejor música electrónica de Caracas.">
+    <meta property="og:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
+    <meta property="og:url" content="https://urbanhouse.world/eventos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eventos | Urban House Records">
+    <meta name="twitter:description" content="Descubre nuestras próximas fiestas y showcases de música electrónica en Venezuela.">
+    <meta name="twitter:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-black: #050505;
+            --brand-gold: #c5a059;
+            --pure-white: #ffffff;
+            --gray-sub: #a0a0a0;
+            --card-bg: #0c0c0c;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--primary-black);
+            color: var(--pure-white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navegación */
+        .glass-nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(5, 5, 5, 0.92); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 16px 5%; display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap;
+        }
+        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a {
+            color: var(--pure-white); text-decoration: none;
+            font-weight: 500; font-size: 0.85rem; transition: var(--transition);
+            text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+
+        /* Header Interno */
+        header.internal-header {
+            padding: 160px 20px 80px; text-align: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+        }
+        header.internal-header h1 {
+            font-family: 'Space Grotesk', monospace; font-size: 3.5rem;
+            color: var(--brand-gold); text-transform: uppercase; letter-spacing: 4px;
+        }
+        header.internal-header p {
+            color: var(--gray-sub); max-width: 600px; margin: 20px auto 0; font-size: 1.1rem;
+        }
+
+        /* Sección de Eventos (Estado Vacío) */
+        .events-section {
+            flex: 1; 
+            padding: 80px 5%; max-width: 900px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: center;
+            width: 100%;
+        }
+        
+        .empty-state {
+            background: var(--card-bg); padding: 60px 40px; border-radius: 16px;
+            border: 1px dashed rgba(197, 160, 89, 0.4);
+            text-align: center; width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .empty-icon {
+            font-size: 4rem; color: rgba(197, 160, 89, 0.5);
+            margin-bottom: 25px;
+        }
+
+        .empty-state h2 {
+            font-family: 'Space Grotesk', monospace; color: var(--pure-white);
+            margin-bottom: 15px; font-size: 1.8rem; text-transform: uppercase;
+        }
+
+        .empty-state p {
+            color: var(--gray-sub); margin-bottom: 35px; font-size: 1.05rem;
+            max-width: 500px; margin-left: auto; margin-right: auto;
+        }
+
+        .btn-outline {
+            color: var(--brand-gold); text-decoration: none; border: 1px solid var(--brand-gold);
+            padding: 12px 30px; border-radius: 40px; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 10px; font-weight: 500;
+            font-size: 0.9rem; font-family: 'Space Grotesk', monospace; text-transform: uppercase;
+        }
+        .btn-outline:hover { 
+            background: var(--brand-gold); color: black; transform: translateY(-2px); 
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+        }
+
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: auto; }
+        .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
+        .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
+        .social a:hover { color: var(--brand-gold); }
+
+        @media (max-width: 780px) {
+            .glass-nav { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+            header.internal-header h1 { font-size: 2.5rem; }
+            .empty-state { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="glass-nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html#releases">Lanzamientos</a>
+        <a href="index.html#upcoming">Próximos</a>
+        <a href="index.html#aliados">Aliados</a>
+        <a href="samples.html">Samples</a>
+        <a href="demos.html">Demos</a>
+        <a href="eventos.html" class="active">Eventos</a>
+    </div>
+</div>
+
+<header class="internal-header">
+    <h1>Eventos</h1>
+    <p>Descubre nuestras próximas fiestas, showcases y lanzamientos en vivo.</p>
+</header>
+
+<section class="events-section">
+    <div class="empty-state">
+        <i class="fa-solid fa-calendar-xmark empty-icon"></i>
+        <h2>Aún no hay eventos activos</h2>
+        <p>Estamos trabajando desde el estudio preparando nuestra próxima gran experiencia. Mantente atento a nuestras redes sociales para ser el primero en enterarte de las nuevas fechas.</p>
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" class="btn-outline">
+            <i class="fa-brands fa-instagram"></i> Síguenos en Instagram
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div class="social">
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
+        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-compact-disc"></i></a>
+    </div>
+    <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
+</footer>
+
+</body>
+</html>
