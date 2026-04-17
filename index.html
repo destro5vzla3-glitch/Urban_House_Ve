@@ -149,7 +149,7 @@
             flex: 0 0 calc(33.333% - 17px);
             min-width: 280px;
             scroll-snap-align: start;
-            cursor: pointer; /* Indica que se puede hacer clic */
+            cursor: pointer;
             position: relative;
         }
         
@@ -181,7 +181,7 @@
         .release-card:hover .play-overlay { opacity: 1; }
         .release-card.playing .play-overlay { opacity: 1; background: rgba(0,0,0,0.7); }
         
-        /* Animación del ecualizador cuando suena (Opcional, detalle fino) */
+        /* Animación del ecualizador cuando suena */
         .playing-indicator {
             position: absolute; bottom: 15px; right: 15px;
             display: none; gap: 3px; height: 15px; align-items: flex-end;
@@ -234,7 +234,7 @@
         .partners-track {
             display: flex; flex-shrink: 0; align-items: center;
             gap: 120px; padding-right: 120px; width: max-content;
-            animation: scroll-partners 30s linear infinite;
+            animation: scroll-partners 40s linear infinite; /* Aumentado a 40s por tener más logos */
         }
         .partners-wrapper:hover .partners-track { animation-play-state: paused; }
         .partners-track img {
@@ -372,30 +372,34 @@
             <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
             <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
             <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
+            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
+            
             <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
             <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
             <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
+            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
+
             <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
             <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
             <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
+            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
         </div>
         
         <div class="partners-track">
             <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
             <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
             <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
+            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
+            
             <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
             <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
             <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
+            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
+
             <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
             <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
             <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
+            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
         </div>
     </div>
 </section>
@@ -415,7 +419,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         
-        // 1. SCROLL SUAVE PARA LINKS INTERNOS (#)
+        // 1. SCROLL SUAVE PARA LINKS INTERNOS
         const links = document.querySelectorAll('.nav-links a');
         links.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -439,29 +443,24 @@
                 const audioSrc = this.getAttribute('data-audio');
                 const icon = this.querySelector('.play-icon');
 
-                // Si no hay source de audio, no hacemos nada
                 if (!audioSrc || audioSrc === "") return;
 
-                // Si hacemos clic en la misma canción que ya está sonando
                 if (currentCard === this && !audioPlayer.paused) {
                     audioPlayer.pause();
                     this.classList.remove('playing');
                     icon.classList.replace('fa-circle-pause', 'fa-circle-play');
                 } else {
-                    // Detener todas las demás tarjetas
                     document.querySelectorAll('.release-card').forEach(c => {
                         c.classList.remove('playing');
                         const cardIcon = c.querySelector('.play-icon');
                         if(cardIcon) cardIcon.classList.replace('fa-circle-pause', 'fa-circle-play');
                     });
                     
-                    // Si es una canción nueva, cargamos la ruta
                     if (currentCard !== this) {
                         audioPlayer.src = audioSrc;
                         currentCard = this;
                     }
                     
-                    // Reproducimos
                     audioPlayer.play().catch(error => console.log("Error al reproducir audio:", error));
                     this.classList.add('playing');
                     icon.classList.replace('fa-circle-play', 'fa-circle-pause');
@@ -469,7 +468,6 @@
             });
         });
 
-        // Detener animación si el audio termina solo
         audioPlayer.addEventListener('ended', function() {
             if(currentCard) {
                 currentCard.classList.remove('playing');
@@ -478,13 +476,13 @@
             }
         });
 
-        // 3. ANIMACIONES REVEAL (Fade-in al hacer scroll)
+        // 3. ANIMACIONES REVEAL
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 50; // Punto donde se activa la animación
+                var elementVisible = 50;
 
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
@@ -492,7 +490,7 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Ejecutar al inicio por si ya hay elementos visibles
+        reveal();
     });
 </script>
 </body>
