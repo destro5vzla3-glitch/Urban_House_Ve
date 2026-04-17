@@ -137,7 +137,6 @@
             scroll-snap-type: x mandatory;
             gap: 25px;
             padding-bottom: 30px;
-            /* Scrollbar styling */
             scrollbar-width: thin;
             scrollbar-color: var(--brand-gold) #1a1a1a;
         }
@@ -148,7 +147,7 @@
         .release-card {
             background: var(--card-bg); border-radius: 16px; overflow: hidden;
             transition: var(--transition); border: 1px solid #1a1a1a;
-            flex: 0 0 calc(33.333% - 17px); /* 3 por fila en desktop */
+            flex: 0 0 calc(33.333% - 17px);
             min-width: 280px;
             scroll-snap-align: start;
         }
@@ -177,47 +176,131 @@
         .release-title { font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 5px; font-family: 'Space Grotesk', monospace; }
         .release-artist { color: var(--brand-gold); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
 
-      /* Estilos para las imágenes de próximos lanzamientos */
-.upcoming-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    position: relative;
-    background: #1a1a1a;
-    border: 1px solid #222;
-}
+        /* Estilos para las imágenes de próximos lanzamientos */
+        .upcoming-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+            background: #1a1a1a;
+            border: 1px solid #222;
+        }
 
-.upcoming-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6; /* Le da un toque de misterio/teaser */
-    transition: var(--transition);
-    filter: grayscale(30%);
-}
+        .upcoming-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: var(--transition);
+            filter: grayscale(30%);
+        }
 
-.upcoming-card:hover .upcoming-img img {
-    opacity: 1;
-    transform: scale(1.05);
-    filter: grayscale(0%);
-}
+        .upcoming-card:hover .upcoming-img img {
+            opacity: 1;
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
 
-.upcoming-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: var(--brand-gold);
-    color: var(--primary-black);
-    padding: 5px 12px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    border-radius: 4px;
-    font-family: 'Space Grotesk', monospace;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+        .upcoming-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--brand-gold);
+            color: var(--primary-black);
+            padding: 5px 12px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            border-radius: 4px;
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           Sección de Aliados / Colaboradores (Marquee)
+           ========================================= */
+        .partners-section {
+            padding: 60px 0;
+            background-color: #020202;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .partners-title {
+            text-align: center;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1rem;
+            color: var(--brand-gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .partners-wrapper {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .partners-wrapper::before,
+        .partners-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 15%;
+            height: 100%;
+            z-index: 2;
+        }
+        .partners-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, #020202 0%, transparent 100%);
+        }
+        .partners-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, #020202 0%, transparent 100%);
+        }
+
+        .partners-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-partners 30s linear infinite;
+        }
+
+        .partners-track:hover {
+            animation-play-state: paused;
+        }
+
+        .partners-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .partners-group img {
+            height: 60px;
+            margin: 0 40px;
+            object-fit: contain;
+            opacity: 0.5;
+            transition: var(--transition);
+            filter: grayscale(100%);
+        }
+
+        .partners-group img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll-partners {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
         /* Botones */
         .btn-outline {
@@ -249,11 +332,24 @@
         .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
         footer p { font-size: 0.75rem; opacity: 0.7; }
 
+        /* Ajustes Responsive Generales y de Aliados */
         @media (max-width: 780px) {
             h1 { font-size: 2.5rem; letter-spacing: 3px; }
             .glass-nav { flex-direction: column; gap: 15px; }
             .carousel-card { flex: 0 0 85%; }
             .social a { font-size: 1.2rem; }
+            
+            .partners-group img {
+                height: 40px;
+                margin: 0 25px;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .partners-group img {
+                height: 80px;
+                margin: 0 60px;
+            }
         }
     </style>
 </head>
@@ -266,6 +362,7 @@
     <div class="nav-links">
         <a href="#releases">Lanzamientos</a>
         <a href="#upcoming">Próximos</a>
+        <a href="#aliados">Aliados</a>
         <a href="#demos">Demos</a>
         <a href="#footer">Contacto</a>
     </div>
@@ -324,17 +421,16 @@
 
 <section id="upcoming">
     <h2><i class="fa-solid fa-calendar-days"></i> Próximos Lanzamientos</h2>
-    <div class="upcoming-grid">
+    <div class="upcoming-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
         
        <div class="upcoming-card">
             <div class="upcoming-img">
                 <img src="img/8916f27dbc3a93740de23838352c3f40 (1).jpg" alt="Beat On the Drums" loading="lazy">
                 <div class="upcoming-badge">Pronto</div>
             </div>
-            <div class="upcoming-date">MAYO 2026</div>
+            <div class="upcoming-date" style="color: var(--brand-gold); font-size: 0.8rem; font-family: 'Space Grotesk', monospace; letter-spacing: 2px;">MAYO 2026</div>
             <h3 class="release-title" style="margin-bottom:10px;">Beat On The Drums - Destro5</h3>
-            <span class="release-artist" style="justify-content: center;"></span>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;"></p>
+            <span class="release-artist" style="justify-content: flex-start;"></span>
         </div>
 
         <div class="upcoming-card">
@@ -342,12 +438,39 @@
                 <img src="img/0233bd82915a383b95ae9d123bcfea47.jpg" alt="Bironbass Vol 1 Cover" loading="lazy">
                 <div class="upcoming-badge">Pronto</div>
             </div>
-            <div class="upcoming-date">MAYO 2026</div>
+            <div class="upcoming-date" style="color: var(--brand-gold); font-size: 0.8rem; font-family: 'Space Grotesk', monospace; letter-spacing: 2px;">MAYO 2026</div>
             <h3 class="release-title" style="margin-bottom:10px;">T.V.T.V - Extintor Bass & Destro5</h3>
-            <span class="release-artist" style="justify-content: center;"></span>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;"></p>
+            <span class="release-artist" style="justify-content: flex-start;"></span>
         </div>
 
+    </div>
+</section>
+
+<section id="aliados" class="partners-section">
+    <div class="partners-title">Aliados Oficiales</div>
+    
+    <div class="partners-wrapper">
+        <div class="partners-track">
+            
+            <div class="partners-group">
+                <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
+                <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
+                <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
+                <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
+                <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
+                <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
+            </div>
+
+            <div class="partners-group">
+                <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
+                <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
+                <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
+                <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
+                <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
+                <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
+            </div>
+
+        </div>
     </div>
 </section>
 
