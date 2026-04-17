@@ -226,6 +226,8 @@
             border-top: 1px solid rgba(197, 160, 89, 0.1);
             border-bottom: 1px solid rgba(197, 160, 89, 0.1);
             margin: 40px 0;
+            max-width: 100%; /* ESTA ES LA CORRECCIÓN CLAVE */
+            width: 100%;
         }
 
         .partners-title {
@@ -242,7 +244,7 @@
         /* Contenedor principal que oculta lo que desborda */
         .partners-wrapper {
             display: flex;
-            overflow: hidden; /* Clave para que no salga barra de scroll horizontal */
+            overflow: hidden;
             width: 100%;
             position: relative;
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -252,12 +254,12 @@
         /* Cada "Pista" o "Vagón" del carrusel */
         .partners-track {
             display: flex;
-            flex-shrink: 0; /* Evita que los logos se aplasten */
+            flex-shrink: 0;
             align-items: center;
-            gap: 120px; /* Separación simétrica */
-            padding-right: 120px; /* IMPORTANTE: Igual al gap para que no haya salto al reiniciar */
-            width: max-content; /* Se expande todo lo que necesite */
-            animation: scroll-partners 30s linear infinite; /* Movimiento continuo ajustado para 3 logos */
+            gap: 120px;
+            padding-right: 120px;
+            width: max-content;
+            animation: scroll-partners 30s linear infinite;
         }
 
         /* Al pasar el mouse, todo el carrusel se pausa */
