@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Urban House Record Label: Sello discográfico independiente de música electrónica. Escucha nuestros últimos lanzamientos, conoce a nuestros artistas y envía tu demo.">
+    <meta name="description" content="Urban House: Sello discográfico de House Music en Caracas. Escucha nuestros lanzamientos, conoce a los artistas y envía tu demo.">
     <meta name="keywords" content="Urban House, record label, sello discográfico, música house, lanzamientos, demos, artistas, Venezuela, house music, electronic label, deep house, latin house">
     <meta name="author" content="Urban House Records">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="Spanish">
+    <meta name="language" content="es">
     <meta name="geo.region" content="VE-A">
     <meta name="geo.placename" content="Caracas">
     
@@ -21,9 +21,10 @@
     <meta property="og:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
     <meta property="og:url" content="https://urbanhouse.world/">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale" content="es_VE">
     
     <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -46,7 +47,7 @@
             color: var(--pure-white);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            line-height: 1.5;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -96,11 +97,13 @@
             padding: 120px 20px 80px 20px; position: relative;
         }
         h1 {
-            font-family: 'Space Grotesk', monospace; font-size: 5rem;
+            font-family: 'Space Grotesk', monospace; font-size: 4rem;
             margin: 0; letter-spacing: 6px; text-transform: uppercase;
             font-weight: 700; background: linear-gradient(135deg, #fff 20%, var(--brand-gold) 80%);
             -webkit-background-clip: text; color: transparent; margin-bottom: 20px;
         }
+        @media (min-width: 768px) { h1 { font-size: 5rem; } }
+        
         .label-type {
             color: var(--brand-gold); letter-spacing: 8px; font-size: 0.85rem;
             margin-bottom: 40px; font-weight: 500; text-transform: uppercase;
@@ -113,12 +116,15 @@
             text-align: center; border-bottom: 1px solid rgba(197, 160, 89, 0.15);
         }
         .intro-title {
-            font-family: 'Space Grotesk', monospace; font-size: 1rem;
+            font-family: 'Space Grotesk', monospace; font-size: 1.2rem;
             color: var(--brand-gold); letter-spacing: 4px; text-transform: uppercase;
-            margin-bottom: 20px; font-weight: 500;
+            margin-bottom: 30px; font-weight: 600;
         }
-        .intro-text { font-size: 1.1rem; line-height: 1.8; color: #c8c8c8; }
+        .intro-text { font-size: 1.1rem; line-height: 1.8; color: #c8c8c8; margin-bottom: 20px;}
+        .intro-text p { margin-bottom: 15px; }
         .intro-text strong { color: var(--brand-gold); font-weight: 600; }
+        .intro-text a { color: var(--brand-gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-bottom 0.3s; }
+        .intro-text a:hover { border-bottom: 1px solid var(--brand-gold); }
 
         section { padding: 80px 5%; max-width: 1300px; margin: 0 auto; }
         h2 {
@@ -142,7 +148,6 @@
         .carousel-container::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 10px; }
         .carousel-container::-webkit-scrollbar-thumb { background: var(--brand-gold); border-radius: 10px; }
 
-        /* Ajustes Release Card para interactividad musical */
         .release-card {
             background: var(--card-bg); border-radius: 16px; overflow: hidden;
             transition: var(--transition); border: 1px solid #1a1a1a;
@@ -181,7 +186,6 @@
         .release-card:hover .play-overlay { opacity: 1; }
         .release-card.playing .play-overlay { opacity: 1; background: rgba(0,0,0,0.7); }
         
-        /* Animación del ecualizador cuando suena */
         .playing-indicator {
             position: absolute; bottom: 15px; right: 15px;
             display: none; gap: 3px; height: 15px; align-items: flex-end;
@@ -196,7 +200,7 @@
         .release-title { font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 5px; font-family: 'Space Grotesk', monospace; }
         .release-artist { color: var(--brand-gold); font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
 
-        /* Estilos de Próximos Lanzamientos */
+        /* Próximos Lanzamientos */
         .upcoming-img {
             width: 100%; aspect-ratio: 1 / 1; border-radius: 10px;
             overflow: hidden; margin-bottom: 20px; position: relative;
@@ -249,6 +253,9 @@
         .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
         .social a { color: var(--pure-white); text-decoration: none; font-size: 1.5rem; transition: var(--transition); }
         .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
+        .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a:hover { color: var(--brand-gold); }
         footer p { font-size: 0.75rem; opacity: 0.7; }
 
         @media (max-width: 780px) {
@@ -283,14 +290,18 @@
 </div>
 
 <header>
-    <h1 class="reveal">URBAN HOUSE</h1>
+    <h1 class="reveal">URBAN HOUSE RECORD LABEL</h1>
     <div class="label-type reveal">RECORD LABEL · CARACAS</div>
 </header>
 
 <div class="intro-wrapper reveal">
     <div class="intro-title"><i class="fa-solid fa-compact-disc"></i> Urban House Records</div>
     <div class="intro-text">
-        <strong>Urban House Records</strong> es el sello discográfico venezolano que impulsa el talento emergente en la escena <strong>de la Música Electrónica</strong>. Con distribución global en Beatport y Traxsource, posicionamos a nuestros artistas en todo el mundo.
+        <p><strong>Urban House Records</strong> es el <strong>sello discográfico</strong> independiente con sede en Caracas, Venezuela, diseñado para impulsar el talento emergente y consolidado en la escena global de la <strong>música electrónica</strong>.</p>
+        
+        <p>Nuestra visión se enfoca en llevar la más pura <strong>House Music</strong> a las pistas de baile de todo el mundo. Nos especializamos en explorar y difundir géneros de alta energía como el Deep House, Tech House y Latin House. Con distribución global a través de Beatport, Traxsource, Spotify y Apple Music, logramos posicionar el trabajo de nuestros <a href="artistas.html">artistas</a> en los mejores charts internacionales.</p>
+        
+        <p>Creemos en la evolución del sonido y apoyamos a los creadores. Por eso, ofrecemos <a href="samples.html">paquetes de samples</a> exclusivos para productores, organizamos <a href="eventos.html">eventos</a> para conectar a la comunidad y siempre estamos en la búsqueda de nuevas propuestas. Si tienes un sonido único, envíanos tus <a href="demos.html">demos</a> y únete a nuestra familia.</p>
     </div>
 </div>
 
@@ -307,7 +318,7 @@
             </div>
             <div class="release-info">
                 <span class="release-title">Oh Lanana</span>
-                <span class="release-artist"><i class="fa-solid fa-user-astronaut"></i> Destro5 & ómada Ft. Onibas</span>
+                <span class="release-artist"><i class="fa-solid fa-user-astronaut"></i> Destro5 & Manamune</span>
             </div>
         </div>
         
@@ -411,6 +422,15 @@
         <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer" title="Beatport"><i class="fa-solid fa-play"></i></a>
         <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer" title="Traxsource"><i class="fa-solid fa-compact-disc"></i></a>
     </div>
+    
+    <div class="footer-nav">
+        <a href="index.html">Inicio</a> | 
+        <a href="artistas.html">Artistas</a> | 
+        <a href="samples.html">Samples</a> | 
+        <a href="eventos.html">Eventos</a> | 
+        <a href="demos.html">Demos</a>
+    </div>
+
     <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
     <p style="margin-top: 8px;">Sello discográfico independiente</p>
 </footer>
