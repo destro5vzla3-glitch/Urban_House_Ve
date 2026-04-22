@@ -1,1 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Conoce a los artistas de Urban House Records. Talento emergente y consolidado en la escena de la música electrónica mundial.">
+    <meta name="keywords" content="Artistas Urban House, DJs Venezuela, productores house, Destro5, Manamune, Extintor Bass, sello discográfico">
+    <meta name="author" content="Urban House Records">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="es">
+    
+    <title>Artistas | Urban House Records</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-black: #050505;
+            --brand-gold: #c5a059;
+            --pure-white: #ffffff;
+            --gray-sub: #a0a0a0;
+            --gray-light: #e0e0e0;
+            --card-bg: #0c0c0c;
+            --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--primary-black);
+            color: var(--pure-white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Animaciones Reveal --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navegación */
+        .glass-nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: var(--transition);
+        }
+        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a {
+            color: var(--pure-white); text-decoration: none;
+            font-weight: 500; letter-spacing: 0.5px;
+            font-size: 0.85rem; transition: var(--transition);
+            text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+
+        /* Header de la Página */
+        .page-header {
+            padding: 160px 5% 80px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(12,12,12,1) 0%, rgba(5,5,5,1) 100%);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        }
+        .page-title {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 30%, var(--brand-gold) 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .page-subtitle {
+            color: var(--gray-sub);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cuadrícula de Artistas */
+        .artists-container {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 50px 30px;
+            justify-items: center;
+        }
+
+        .artist-card-page {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .artist-photo-wrapper {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid #1a1a1a;
+            overflow: hidden;
+            position: relative;
+            transition: var(--transition);
+            background-color: var(--card-bg);
+        }
+
+        .artist-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) opacity(0.8);
+            transition: var(--transition);
+        }
+
+        .artist-info h3 {
+            color: var(--pure-white);
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            margin-bottom: 5px;
+        }
+
+        .artist-info span {
+            color: var(--brand-gold);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            display: block;
+        }
+
+        /* Hover Effects */
+        .artist-card-page:hover .artist-photo-wrapper {
+            border-color: var(--brand-gold);
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .artist-card-page:hover .artist-photo-wrapper img {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.1);
+        }
+
+        .artist-card-page:hover .artist-info h3 {
+            color: var(--brand-gold);
+        }
+
+        .artist-card-page:hover .artist-info span {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: 60px; }
+        .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
+        .social a { color: var(--pure-white); text-decoration: none; font-size: 1.5rem; transition: var(--transition); }
+        .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
+        .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a:hover { color: var(--brand-gold); }
+        footer p { font-size: 0.75rem; opacity: 0.7; }
+
+        @media (max-width: 780px) {
+            .page-title { font-size: 2.2rem; }
+            .glass-nav { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+            .artists-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 30px 15px; }
+            .artist-photo-wrapper { width: 140px; height: 140px; }
+        }
+    </style>
+</head>
+<body id="top">
+
+<div class="glass-nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#releases">Lanzamientos</a>
+        <a href="artistas.html" class="active">Artistas</a>
+        <a href="samples.html">Samples</a>
+        <a href="demos.html">Demos</a>
+        <a href="eventos.html">Eventos</a>
+    </div>
+</div>
+
+<header class="page-header reveal">
+    <h1 class="page-title"><i class="fa-solid fa-users"></i> ARTISTAS</h1>
+    <p class="page-subtitle">El talento que define el sonido de Urban House Records. Los creadores que han llevado nuestra visión a las pistas de baile de todo el mundo.</p>
+</header>
+
+<main class="artists-container">
+    <div class="artists-grid">
+        
+        <div class="artist-card-page reveal" style="transition-delay: 0.1s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/destro5.jpg" alt="Destro5" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Destro5</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.2s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/treboll.jpg" alt="Treboll" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Treboll</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.3s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/destroxtreboll.jpg" alt="DestroxTreboll" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>DestroxTreboll</h3>
+                <span>Duo</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.4s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/extintor-bass.jpg" alt="Extintor Bass" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Extintor Bass</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.1s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/nidhoog.jpg" alt="Nidhoog" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Nidhoog</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.2s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/nereid.jpg" alt="Nereid" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Nereid</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.3s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/keross.jpg" alt="Keross" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Keross</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.4s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/nekakev.jpg" alt="Nekakev" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Nekakev</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.1s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/omada.jpg" alt="Omada" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Omada</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.2s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/onibas.jpg" alt="Onibas" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Onibas</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.3s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/manamune.jpg" alt="Manamune" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Manamune</h3>
+                <span>Duo</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.4s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/nicko-di.jpg" alt="Nicko Di" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>Nicko Di</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+        <div class="artist-card-page reveal" style="transition-delay: 0.1s;">
+            <div class="artist-photo-wrapper">
+                <img src="img/artistas/ronald.jpg" alt="R ø n a l d" loading="lazy">
+            </div>
+            <div class="artist-info">
+                <h3>R ø n a l d</h3>
+                <span>Producer / DJ</span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer id="footer" class="reveal">
+    <div class="social">
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer" title="Beatport"><i class="fa-solid fa-play"></i></a>
+        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer" title="Traxsource"><i class="fa-solid fa-compact-disc"></i></a>
+    </div>
+    
+    <div class="footer-nav">
+        <a href="index.html">Inicio</a> | 
+        <a href="artistas.html">Artistas</a> | 
+        <a href="samples.html">Samples</a> | 
+        <a href="eventos.html">Eventos</a> | 
+        <a href="demos.html">Demos</a>
+    </div>
+
+    <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
+    <p style="margin-top: 8px;">Sello discográfico independiente</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // ANIMACIONES REVEAL EN SCROLL
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        // Llamar inmediatamente para mostrar los elementos que ya están en pantalla
+        setTimeout(reveal, 100); 
+    });
+</script>
+</body>
+</html>
