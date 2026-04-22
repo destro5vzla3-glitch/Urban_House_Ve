@@ -8,7 +8,7 @@
     <meta name="keywords" content="sample packs, house samples, tech house loops, presets, producción musical, Urban House Records, librerías de sonido, música electrónica">
     <meta name="author" content="Urban House Records">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="Spanish">
+    <meta name="language" content="es">
     
     <title>Sample Packs & Presets | Urban House Records</title>
     
@@ -27,6 +27,7 @@
     <meta name="twitter:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
     
     <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -127,10 +128,14 @@
             box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
         }
 
+        /* Footer */
         footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: auto; }
         .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
         .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
-        .social a:hover { color: var(--brand-gold); }
+        .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
+        .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a:hover { color: var(--brand-gold); }
 
         @media (max-width: 780px) {
             .glass-nav { flex-direction: column; gap: 15px; }
@@ -149,7 +154,7 @@
     <div class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="index.html#releases">Lanzamientos</a>
-        <a href="index.html#upcoming">Próximos</a>
+        <a href="artistas.html">Artistas</a> <a href="index.html#upcoming">Próximos</a>
         <a href="index.html#aliados">Aliados</a>
         <a href="samples.html" class="active">Samples</a>
         <a href="demos.html">Demos</a>
@@ -179,6 +184,15 @@
         <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
         <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-compact-disc"></i></a>
     </div>
+    
+    <div class="footer-nav">
+        <a href="index.html">Inicio</a> | 
+        <a href="artistas.html">Artistas</a> | 
+        <a href="samples.html">Samples</a> | 
+        <a href="eventos.html">Eventos</a> | 
+        <a href="demos.html">Demos</a>
+    </div>
+
     <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
 </footer>
 
