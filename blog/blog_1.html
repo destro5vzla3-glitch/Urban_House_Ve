@@ -118,6 +118,44 @@
         
         .article-body strong { color: var(--pure-white); font-weight: 600; }
 
+        /* Botón de Regreso */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-sub);
+            text-decoration: none;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .back-btn i {
+            transition: transform 0.3s ease;
+        }
+        .back-btn:hover {
+            color: var(--brand-gold);
+        }
+        .back-btn:hover i {
+            transform: translateX(-5px);
+        }
+
+        /* Estilos para Enlaces de Birongo */
+        .inline-link {
+            color: var(--brand-gold);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--brand-gold);
+            transition: var(--transition);
+        }
+        
+        .inline-link:hover {
+            color: var(--pure-white);
+            border-bottom: 1px solid var(--pure-white);
+        }
+
         /* Letra Capital (Drop Cap) */
         .lead::first-letter {
             font-family: 'Space Grotesk', monospace;
@@ -146,15 +184,6 @@
             border-radius: 8px;
             border: 1px solid rgba(197, 160, 89, 0.3);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .img-caption {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--gray-sub);
-            text-align: center;
-            margin-top: 8px;
-            font-style: italic;
         }
 
         /* Etiquetas (Tags) */
@@ -262,7 +291,11 @@
 
 <main class="article-body">
     
-    <p class="lead reveal"><strong>CARACAS, VENEZUELA</strong> – El pasado sábado 18 de abril, los espacios de La Quinta Bar dejaron de ser un simple local nocturno para convertirse en el epicentro de una verdadera catarsis musical. Con las entradas de preventa totalmente agotadas, la celebración de <strong>Birongo Live 2.0</strong> demostró que en la capital existe una comunidad vibrante, unida y sedienta de experiencias auténticas en torno a la "Música Rápida".</p>
+    <a href="blog.html" class="back-btn reveal">
+        <i class="fa-solid fa-arrow-left"></i> Volver al Blog
+    </a>
+
+    <p class="lead reveal"><strong>CARACAS, VENEZUELA</strong> – El pasado sábado 18 de abril, los espacios de La Quinta Bar dejaron de ser un simple local nocturno para convertirse en el epicentro de una verdadera catarsis musical. Con las entradas de preventa totalmente agotadas, la celebración de <a href="https://www.birongo.live/" target="_blank" class="inline-link"><strong>Birongo Live 2.0</strong></a> demostró que en la capital existe una comunidad vibrante, unida y sedienta de experiencias auténticas en torno a la "Música Rápida".</p>
 
     <div class="reveal">
         <img src="../blog/img/ezgif-frame-001.png" alt="Extintor Bass en Vivo" class="img-float-right">
@@ -275,9 +308,9 @@
     <div class="reveal">
         <img src="../blog/img/669728187_17919571326328873_1518744815476243198_n..jpg" alt="Afiche Birongo" class="img-float-left">
         
-        <p>Sin embargo, el verdadero éxito de <em>Birongo Live 2.0</em> radicó en su alma. Más allá de ser una fiesta excepcional, el evento se erigió como un sentido homenaje a la identidad cultural del país. Inspirados en el pueblo de Birongo —un histórico símbolo de resistencia afrovenezolana y cuna del tambor—, los creadores del evento lograron una fusión mágica: enlazar el latido orgánico y ancestral de nuestras raíces con la crudeza de los sonidos industriales contemporáneos.</p>
+        <p>Sin embargo, el verdadero éxito de <a href="https://www.birongo.live/" target="_blank" class="inline-link"><em>Birongo Live 2.0</em></a> radicó en su alma. Más allá de ser una fiesta excepcional, el evento se erigió como un sentido homenaje a la identidad cultural del país. Inspirados en el pueblo de Birongo —un histórico símbolo de resistencia afrovenezolana y cuna del tambor—, los creadores del evento lograron una fusión mágica: enlazar el latido orgánico y ancestral de nuestras raíces con la crudeza de los sonidos industriales contemporáneos.</p>
         
-        <p>Gracias al respaldo de aliados clave como <strong>Jägermeister</strong>, quienes apuestan firmemente por el desarrollo de la cultura alternativa, Birongo Live 2.0 se consolida no solo como una fiesta, sino como una de las experiencias nocturnas más disruptivas y necesarias de Caracas en este 2026.</p>
+        <p>Gracias al respaldo de aliados clave como <strong>Jägermeister</strong>, quienes apuestan firmemente por el desarrollo de la cultura alternativa, <a href="https://www.birongo.live/" target="_blank" class="inline-link"><strong>Birongo Live 2.0</strong></a> se consolida no solo como una fiesta, sino como una de las experiencias nocturnas más disruptivas y necesarias de Caracas en este 2026.</p>
     </div>
 
     <p class="reveal" style="clear: both; margin-top: 40px;">La invitación queda abierta a toda la comunidad a mantenerse atentos a las redes sociales oficiales, porque el ritmo de Birongo apenas comienza a acelerarse y ya se preparan para futuras ediciones.</p>
