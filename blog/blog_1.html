@@ -1,1 +1,368 @@
-Hola mundo
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="La noche en que el latido ancestral y la vanguardia electrónica hicieron vibrar a Caracas. Reseña oficial de Birongo Live 2.0.">
+    <meta name="keywords" content="Birongo Live, Urban House Records, Caracas, música electrónica, Extintor Bass, Techno, Schranz, UK Bass">
+    <meta name="author" content="Urban House Records">
+    
+    <title>Birongo Live 2.0: La noche que hizo vibrar a Caracas | Urban House</title>
+    
+    <meta property="og:title" content="Birongo Live 2.0: El latido ancestral y la vanguardia electrónica en Caracas">
+    <meta property="og:description" content="Con entradas agotadas, La Quinta Bar se convirtió en el epicentro de la Música Rápida. Descubre cómo se vivió esta catarsis musical.">
+    <meta property="og:image" content="img/0233bd82915a383b95ae9d123bcfea47.jpg"> <meta property="og:url" content="https://urbanhouse.world/blog_2.html">
+    <meta property="og:type" content="article">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-black: #050505;
+            --brand-gold: #c5a059;
+            --pure-white: #ffffff;
+            --gray-sub: #a0a0a0;
+            --card-bg: #0c0c0c;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--primary-black);
+            color: var(--pure-white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Animaciones */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Navegación */
+        .glass-nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(5, 5, 5, 0.92); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+        }
+        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a {
+            color: var(--pure-white); text-decoration: none; font-weight: 500; letter-spacing: 0.5px;
+            font-size: 0.85rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+
+        /* Article Header (Hero) */
+        .article-hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(5,5,5,1) 100%), url('img/0233bd82915a383b95ae9d123bcfea47.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 5% 60px 5%;
+        }
+        
+        .article-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .article-category {
+            color: var(--brand-gold);
+            font-family: 'Space Grotesk', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .article-title {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--pure-white);
+        }
+
+        .article-meta {
+            color: var(--gray-sub);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* Contenido del Artículo (Magazine Style) */
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+            font-size: 1.15rem;
+            color: #dcdcdc;
+        }
+
+        .article-body p { margin-bottom: 25px; text-align: justify; }
+        
+        .article-body strong { color: var(--pure-white); font-weight: 600; }
+
+        /* Letra Capital (Drop Cap) */
+        .lead::first-letter {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 4.5rem;
+            color: var(--brand-gold);
+            float: left;
+            line-height: 0.8;
+            margin-right: 12px;
+            margin-top: 5px;
+        }
+
+        /* Imágenes Flotantes dentro del texto */
+        .img-float-right {
+            float: right;
+            width: 45%;
+            margin: 10px 0 20px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .img-float-left {
+            float: left;
+            width: 45%;
+            margin: 10px 30px 20px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .img-caption {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray-sub);
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Cita Destacada */
+        blockquote {
+            border-left: 4px solid var(--brand-gold);
+            background: linear-gradient(90deg, rgba(197, 160, 89, 0.08) 0%, rgba(0,0,0,0) 100%);
+            padding: 30px;
+            margin: 40px 0;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--pure-white);
+            font-family: 'Space Grotesk', monospace;
+            border-radius: 0 12px 12px 0;
+            clear: both; /* Asegura que no se monte sobre las imágenes flotantes */
+        }
+
+        /* Etiquetas (Tags) */
+        .article-tags {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            clear: both;
+        }
+        
+        .article-tags span { font-weight: 600; font-size: 0.9rem; margin-right: 10px;}
+        
+        .tag {
+            background: #111;
+            color: var(--gray-sub);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+        .tag:hover { background: var(--brand-gold); color: #000; border-color: var(--brand-gold); }
+
+        /* Compartir (Share) */
+        .share-section {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--card-bg);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid #1a1a1a;
+        }
+
+        .share-title { font-family: 'Space Grotesk', monospace; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;}
+
+        .share-btn {
+            display: flex; justify-content: center; align-items: center;
+            width: 40px; height: 40px; border-radius: 50%;
+            color: white; text-decoration: none; font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .share-btn:hover { transform: translateY(-3px); }
+        .bg-fb { background: #1877F2; }
+        .bg-tw { background: #000000; border: 1px solid #333; }
+        .bg-wa { background: #25D366; }
+
+        /* Footer */
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; }
+        .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
+        .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
+        .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
+        .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a:hover { color: var(--brand-gold); }
+
+        /* Responsive */
+        @media (max-width: 780px) {
+            .glass-nav { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .article-title { font-size: 2rem; }
+            .article-hero { height: 50vh; }
+            /* Quitar el flotado en móviles para que las fotos abarquen todo el ancho */
+            .img-float-right, .img-float-left {
+                float: none; width: 100%; margin: 20px 0;
+            }
+            .share-section { flex-direction: column; text-align: center; }
+        }
+    </style>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="hrGUPinvFqHevCHSaiu7Tw" async></script>
+</head>
+<body>
+
+<div class="glass-nav">
+    <div class="nav-logo">
+        <a href="/"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
+    </div>
+    <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/#releases">Lanzamientos</a>
+        <a href="artistas.html">Artistas</a>
+        <a href="samples.html">Samples</a>
+        <a href="demos.html">Demos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="blog.html" class="active">Blog</a>
+    </div>
+</div>
+
+<header class="article-hero reveal">
+    <div class="article-header-content">
+        <span class="article-category"><i class="fa-solid fa-bolt"></i> Reseña de Evento</span>
+        <h1 class="article-title">Birongo Live 2.0: La noche en que el latido ancestral y la vanguardia electrónica hicieron vibrar a Caracas</h1>
+        <div class="article-meta">
+            <span><i class="fa-regular fa-calendar"></i> 20 de Abril, 2026</span>
+            <span><i class="fa-solid fa-location-dot"></i> La Quinta Bar, Caracas</span>
+        </div>
+    </div>
+</header>
+
+<main class="article-body">
+    
+    <p class="lead reveal"><strong>CARACAS, VENEZUELA</strong> – El pasado sábado 18 de abril, los espacios de La Quinta Bar dejaron de ser un simple local nocturno para convertirse en el epicentro de una verdadera catarsis musical. Con las entradas de preventa totalmente agotadas, la celebración de <strong>Birongo Live 2.0</strong> demostró que en la capital existe una comunidad vibrante, unida y sedienta de experiencias auténticas en torno a la "Música Rápida".</p>
+
+    <div class="reveal">
+        <img src="artistas/WhatsApp Image 2026-03-26 at 3.16.10 PM.jpeg" alt="Extintor Bass en Vivo" class="img-float-right">
+        
+        <p>Desde las 11:00 PM, la atmósfera se transformó en un viaje sonoro implacable. El público caraqueño se entregó a una noche donde la diversidad y la energía fueron las protagonistas. El talento nacional brilló con un LineUp de primer nivel que conectó de forma visceral con la pista de baile.</p>
+        
+        <p>La pauta quedó marcada desde el inicio con los potentes quiebres de <strong>Extintor Bass</strong> (UK Bass) y el ritmo envolvente de <strong>Haddes</strong> (Bass House). La intensidad fue subiendo gradualmente con la contundencia de <strong>Kurgans</strong> (Techno) y el golpe industrial de <strong>Moret</strong> (Schranz), hasta alcanzar el clímax total con la propuesta disruptiva de <strong>Okubo</strong> (Hard Raptor). Cada artista sobre la tarima fue una prueba irrefutable de la solidez y la evolución de la producción electrónica en Venezuela.</p>
+    </div>
+
+    <blockquote class="reveal">
+        "Ver la respuesta de la gente, esa energía inagotable y el respeto por cada género que sonó, nos confirma que estamos construyendo algo especial." 
+        <br><span style="font-size: 0.9rem; color: var(--brand-gold); font-style: normal;">— Organización Urban House Records</span>
+    </blockquote>
+
+    <div class="reveal">
+        <img src="img/0233bd82915a383b95ae9d123bcfea47.jpg" alt="Afiche Birongo" class="img-float-left">
+        
+        <p>Sin embargo, el verdadero éxito de <em>Birongo Live 2.0</em> radicó en su alma. Más allá de ser una fiesta excepcional, el evento se erigió como un sentido homenaje a la identidad cultural del país. Inspirados en el pueblo de Birongo —un histórico símbolo de resistencia afrovenezolana y cuna del tambor—, los creadores del evento lograron una fusión mágica: enlazar el latido orgánico y ancestral de nuestras raíces con la crudeza de los sonidos industriales contemporáneos.</p>
+        
+        <p>Gracias al respaldo de aliados clave como <strong>Jägermeister</strong>, quienes apuestan firmemente por el desarrollo de la cultura alternativa, Birongo Live 2.0 se consolida no solo como una fiesta, sino como una de las experiencias nocturnas más disruptivas y necesarias de Caracas en este 2026.</p>
+    </div>
+
+    <p class="reveal" style="clear: both; margin-top: 40px;">La invitación queda abierta a toda la comunidad a mantenerse atentos a las redes sociales oficiales, porque el ritmo de Birongo apenas comienza a acelerarse y ya se preparan para futuras ediciones.</p>
+
+    <div class="article-tags reveal">
+        <span><i class="fa-solid fa-tags"></i> Etiquetas:</span>
+        <a href="#" class="tag">#BirongoLive</a>
+        <a href="#" class="tag">#Caracas</a>
+        <a href="#" class="tag">#UKBass</a>
+        <a href="#" class="tag">#Techno</a>
+        <a href="#" class="tag">#Eventos</a>
+    </div>
+
+    <div class="share-section reveal">
+        <span class="share-title">Compartir la reseña:</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://urbanhouse.world/blog_2.html" target="_blank" class="share-btn bg-fb" title="Compartir en Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=Mira%20esta%20brutal%20reseña%20de%20Birongo%20Live%202.0%20por%20Urban%20House%20Records!&url=https://urbanhouse.world/blog_2.html" target="_blank" class="share-btn bg-tw" title="Compartir en X">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?text=Brutal%20lo%20que%20se%20vivió%20en%20Birongo%20Live%202.0%20en%20Caracas!%20Lee%20la%20reseña%20aquí:%20https://urbanhouse.world/blog_2.html" target="_blank" class="share-btn bg-wa" title="Compartir en WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    <div class="social">
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
+        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-compact-disc"></i></a>
+    </div>
+    
+    <div class="footer-nav">
+        <a href="/">Inicio</a> | 
+        <a href="artistas.html">Artistas</a> | 
+        <a href="samples.html">Samples</a> | 
+        <a href="eventos.html">Eventos</a> | 
+        <a href="demos.html">Demos</a> |
+        <a href="blog.html">Blog</a>
+    </div>
+
+    <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Animaciones Reveal en scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100); 
+    });
+</script>
+</body>
+</html>
