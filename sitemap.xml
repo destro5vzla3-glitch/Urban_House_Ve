@@ -54,22 +54,7 @@
         <loc>https://urbanhouse.world/blog_1.html</loc>
         <lastmod>2026-04-22</lastmod>
         <changefreq>never</changefreq>
-        <priority>0.7</priority>
-        <news:news>
-            <news:publication>
-                <news:name>Urban House Records</news:name>
-                <news:language>es</news:language>
-            </news:publication>
-            <news:publication_date>2026-04-22</news:publication_date>
-            <news:title>Urban House presente en el Sunset Festival Caracas</news:title>
-        </news:news>
-    </url>
-
-    <url>
-        <loc>https://urbanhouse.world/blog_2.html</loc>
-        <lastmod>2026-04-22</lastmod>
-        <changefreq>never</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
         <news:news>
             <news:publication>
                 <news:name>Urban House Records</news:name>
