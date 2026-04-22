@@ -88,7 +88,7 @@
         }
         .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
 
-        /* --- Hero Section Dinámico (Efecto Video sin video) --- */
+        /* --- Hero Section: Fondo Carrusel Deslizante --- */
         header.dynamic-header {
             min-height: 85vh; 
             display: flex; 
@@ -99,43 +99,55 @@
             border-bottom: 2px solid var(--brand-gold);
             padding: 120px 20px 80px 20px; 
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Evita que el carrusel desborde la pantalla */
         }
 
-        .slideshow {
+        .carousel-background {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
             background-color: var(--primary-black);
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            height: 100%;
+            /* Animación de 25 segundos, loop infinito */
+            animation: slideCarousel 25s infinite ease-in-out;
         }
 
         .slide {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            width: 100vw; /* Cada imagen ocupa exactamente el ancho de la pantalla */
+            height: 100%;
+            flex-shrink: 0;
             background-size: cover;
-            background-position: center;
-            opacity: 0;
-            animation: cinematicFade 25s infinite; 
+            background-position: center top;
         }
 
-        .slide-1 { background-image: url('img/DESTRO5  COVEART 2026 3 (1).png'); animation-delay: 0s; }
-        .slide-2 { background-image: url('artistas/WhatsApp Image 2026-03-10 at 5.51.38 PM.jpeg'); animation-delay: 5s; }
-        .slide-3 { background-image: url('img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg'); animation-delay: 10s; }
-        .slide-4 { background-image: url('artistas/ab6761610000e5eba999de8fed4a201a0c6be42d.jpeg'); animation-delay: 15s; }
-        .slide-5 { background-image: url('img/8916f27dbc3a93740de23838352c3f40 (1).jpg'); animation-delay: 20s; }
+        /* Imágenes del carrusel */
+        .slide-1 { background-image: url('img/DESTRO5  COVEART 2026 3 (1).png'); }
+        .slide-2 { background-image: url('artistas/WhatsApp Image 2026-03-10 at 5.51.38 PM.jpeg'); } /* Destro5 */
+        .slide-3 { background-image: url('img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg'); } /* Spectra */
+        .slide-4 { background-image: url('artistas/ab6761610000e5eba999de8fed4a201a0c6be42d.jpeg'); } /* Manamune */
+        .slide-5 { background-image: url('img/8916f27dbc3a93740de23838352c3f40 (1).jpg'); } /* Beat On The Drums */
 
-        @keyframes cinematicFade {
-            0% { opacity: 0; transform: scale(1); }
-            4% { opacity: 1; transform: scale(1.02); }
-            20% { opacity: 1; transform: scale(1.1); }
-            24% { opacity: 0; transform: scale(1.12); }
-            100% { opacity: 0; transform: scale(1.12); }
+        /* Keyframes para que se detenga unos segundos y luego deslice */
+        @keyframes slideCarousel {
+            0%, 15%   { transform: translateX(0); }          /* Muestra foto 1 */
+            20%, 35%  { transform: translateX(-100vw); }     /* Muestra foto 2 */
+            40%, 55%  { transform: translateX(-200vw); }     /* Muestra foto 3 */
+            60%, 75%  { transform: translateX(-300vw); }     /* Muestra foto 4 */
+            80%, 95%  { transform: translateX(-400vw); }     /* Muestra foto 5 */
+            100%      { transform: translateX(-500vw); }     /* Vuelve a la 1 (clon) para el loop perfecto */
         }
 
         .video-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.95)); 
+            /* Oscurecemos el fondo para que las letras resalten perfectamente */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)); 
             z-index: 2;
         }
 
@@ -340,14 +352,19 @@
 </div>
 
 <header class="dynamic-header">
-    <div class="slideshow">
-        <div class="slide slide-1"></div>
-        <div class="slide slide-2"></div>
-        <div class="slide slide-3"></div>
-        <div class="slide slide-4"></div>
-        <div class="slide slide-5"></div>
+    <div class="carousel-background">
+        <div class="carousel-track">
+            <div class="slide slide-1"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+            <div class="slide slide-4"></div>
+            <div class="slide slide-5"></div>
+            <div class="slide slide-1"></div>
+        </div>
     </div>
+    
     <div class="video-overlay"></div>
+    
     <div class="header-content">
         <h1 class="reveal">URBAN HOUSE RECORD LABEL</h1>
         <div class="label-type reveal">RECORD LABEL · CARACAS</div>
