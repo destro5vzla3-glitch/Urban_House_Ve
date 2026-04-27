@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
     <meta name="description" content="La noche en que el latido ancestral y la vanguardia electrónica hicieron vibrar a Caracas. Reseña oficial de Birongo Live 2.0.">
     <meta name="keywords" content="Birongo Live, Urban House Records, Caracas, música electrónica, Extintor Bass, Techno, Schranz, UK Bass">
@@ -12,7 +12,8 @@
     
     <meta property="og:title" content="Birongo Live 2.0: El latido ancestral y la vanguardia electrónica en Caracas">
     <meta property="og:description" content="Con entradas agotadas, La Quinta Bar se convirtió en el epicentro de la Música Rápida. Descubre cómo se vivió esta catarsis musical.">
-    <meta property="og:image" content="../img/0233bd82915a383b95ae9d123bcfea47.jpg"> <meta property="og:url" content="https://urbanhouse.world/blog_2.html">
+    <meta property="og:image" content="../img/0233bd82915a383b95ae9d123bcfea47.jpg"> 
+    <meta property="og:url" content="https://urbanhouse.world/blog_1.html">
     <meta property="og:type" content="article">
     
     <link rel="icon" type="image/png" sizes="32x32" href="../img/Logo - Urban House-UH.png">
@@ -27,7 +28,7 @@
             --pure-white: #ffffff;
             --gray-sub: #a0a0a0;
             --card-bg: #0c0c0c;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,21 +46,34 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Navegación */
+        /* --- Navegación General --- */
         .glass-nav {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(5, 5, 5, 0.92); backdrop-filter: blur(16px);
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+            padding: 15px 5%; display: flex; justify-content: space-between;
+            align-items: center; transition: var(--transition);
         }
-        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img { height: 45px; transition: var(--transition); }
         .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
-        .nav-links { display: flex; gap: 30px; }
+        
+        .nav-links { display: flex; gap: 35px; align-items: center; }
         .nav-links a {
-            color: var(--pure-white); text-decoration: none; font-weight: 500; letter-spacing: 0.5px;
-            font-size: 0.85rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+            color: var(--pure-white); text-decoration: none;
+            font-weight: 500; font-size: 0.85rem; transition: var(--transition);
+            text-transform: uppercase; font-family: 'Space Grotesk', monospace; letter-spacing: 0.5px;
         }
         .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+
+        /* Botón de Hamburguesa (Oculto en Desktop) */
+        .hamburger-menu {
+            display: none;
+            color: var(--brand-gold);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .hamburger-menu:hover { transform: scale(1.1); }
 
         /* Article Header (Hero) */
         .article-hero {
@@ -243,15 +257,51 @@
         .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
         .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
         .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace;}
         .footer-nav a:hover { color: var(--brand-gold); }
 
-        /* Responsive */
-        @media (max-width: 780px) {
-            .glass-nav { flex-direction: column; gap: 15px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+        /* =========================================================================
+           DISEÑO RESPONSIVO (Móviles y Tablets)
+           ========================================================================= */
+        @media (max-width: 900px) {
+            /* Navbar Móvil: Menú Hamburguesa */
+            .glass-nav { padding: 15px 5%; }
+            .hamburger-menu { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 5, 5, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                gap: 25px;
+                border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+                
+                /* Estado Oculto (Cerrado) */
+                transform: translateY(-120%);
+                opacity: 0;
+                visibility: hidden;
+            }
+            /* Estado Visible (Abierto) */
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
             .article-title { font-size: 2rem; }
             .article-hero { height: 50vh; }
+            
             /* Quitar el flotado en móviles para que las fotos abarquen todo el ancho */
             .img-float-right, .img-float-left {
                 float: none; width: 100%; margin: 20px 0;
@@ -267,7 +317,12 @@
     <div class="nav-logo">
         <a href="/"><img src="../img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House"></a>
     </div>
-    <div class="nav-links">
+    
+    <div class="hamburger-menu" id="hamburger-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="nav-links">
         <a href="../">Inicio</a>
         <a href="../#releases">Lanzamientos</a>
         <a href="../artistas.html">Artistas</a>
@@ -328,13 +383,13 @@
 
     <div class="share-section reveal">
         <span class="share-title">Compartir la reseña:</span>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://urbanhouse.world/blog_2.html" target="_blank" class="share-btn bg-fb" title="Compartir en Facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://urbanhouse.world/blog_1.html" target="_blank" class="share-btn bg-fb" title="Compartir en Facebook">
             <i class="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="https://twitter.com/intent/tweet?text=Mira%20esta%20brutal%20reseña%20de%20Birongo%20Live%202.0%20por%20Urban%20House%20Records!&url=https://urbanhouse.world/blog_2.html" target="_blank" class="share-btn bg-tw" title="Compartir en X">
+        <a href="https://twitter.com/intent/tweet?text=Mira%20esta%20brutal%20reseña%20de%20Birongo%20Live%202.0%20por%20Urban%20House%20Records!&url=https://urbanhouse.world/blog_1.html" target="_blank" class="share-btn bg-tw" title="Compartir en X">
             <i class="fa-brands fa-x-twitter"></i>
         </a>
-        <a href="https://api.whatsapp.com/send?text=Brutal%20lo%20que%20se%20vivió%20en%20Birongo%20Live%202.0%20en%20Caracas!%20Lee%20la%20reseña%20aquí:%20https://urbanhouse.world/blog_2.html" target="_blank" class="share-btn bg-wa" title="Compartir en WhatsApp">
+        <a href="https://api.whatsapp.com/send?text=Brutal%20lo%20que%20se%20vivió%20en%20Birongo%20Live%202.0%20en%20Caracas!%20Lee%20la%20reseña%20aquí:%20https://urbanhouse.world/blog_1.html" target="_blank" class="share-btn bg-wa" title="Compartir en WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
@@ -362,6 +417,36 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // LÓGICA DEL MENÚ HAMBURGUESA (Móviles)
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const navLinksContainer = document.getElementById('nav-links');
+        const hamburgerIcon = hamburgerBtn.querySelector('i');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navLinksContainer.classList.toggle('active');
+            
+            // Cambiar ícono entre barras y X
+            if (navLinksContainer.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+            } else {
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+            }
+        });
+
+        // CERRAR MENÚ AL HACER CLIC EN UN ENLACE
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 900) {
+                    navLinksContainer.classList.remove('active');
+                    hamburgerIcon.classList.remove('fa-xmark');
+                    hamburgerIcon.classList.add('fa-bars');
+                }
+            });
+        });
+
         // Animaciones Reveal en scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
