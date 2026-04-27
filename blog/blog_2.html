@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Destro5 presenta 'Oh Lanana', un nuevo sencillo que fusiona House, UK Bass y Afro-Latin House junto a Ómada y Onibas.">
+    <meta name="keywords" content="Oh Lanana, Destro5, Omada, Onibas, Urban House Records, UK Bass, Afro-Latin House, EDM, lanzamiento musical">
+    <meta name="author" content="Redacción QMC / Urban House Records">
+    
+    <title>Oh Lanana: El regreso de Destro5 junto a Ómada y Onibas | Blog - Urban House</title>
+    
+    <meta property="og:title" content="Oh Lanana marca el regreso de Destro5 con una colaboración junto a Ómada y Onibas">
+    <meta property="og:description" content="El productor electrónico presenta un nuevo sencillo que fusiona House, UK Bass y Afro-Latin House tras un proceso creativo de tres años.">
+    <meta property="og:image" content="img/cover-oh-lanana.jpg"> 
+    <meta property="og:url" content="https://urbanhouse.world/blog_3.html">
+    <meta property="og:type" content="article">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-black: #050505;
+            --brand-gold: #c5a059;
+            --pure-white: #ffffff;
+            --gray-sub: #a0a0a0;
+            --card-bg: #0c0c0c;
+            --transition: all 0.3s ease;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--primary-black);
+            color: var(--pure-white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Animaciones */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Navegación */
+        .glass-nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(5, 5, 5, 0.92); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+        }
+        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a {
+            color: var(--pure-white); text-decoration: none; font-weight: 500; letter-spacing: 0.5px;
+            font-size: 0.85rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+
+        /* Article Header (Hero) */
+        .article-hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            /* REEMPLAZA EL ENLACE DE ESTE BACKGROUND POR LA IMAGEN PRINCIPAL DEL ARTÍCULO */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(5,5,5,1) 100%), url('img/cover-oh-lanana.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 5% 60px 5%;
+        }
+        
+        .article-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .article-category {
+            color: var(--brand-gold);
+            font-family: 'Space Grotesk', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .article-title {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--pure-white);
+        }
+
+        .article-meta {
+            color: var(--gray-sub);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* Contenido del Artículo */
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+            font-size: 1.15rem;
+            color: #dcdcdc;
+        }
+
+        .article-body p { margin-bottom: 25px; text-align: justify; }
+        .article-body h2 { 
+            color: var(--brand-gold); 
+            font-family: 'Space Grotesk', monospace; 
+            font-size: 1.8rem; 
+            margin: 40px 0 20px 0; 
+        }
+        .article-body strong { color: var(--pure-white); font-weight: 600; }
+
+        /* Botón de Regreso */
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 8px; color: var(--gray-sub);
+            text-decoration: none; font-family: 'Space Grotesk', monospace; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; font-weight: 600;
+            transition: var(--transition);
+        }
+        .back-btn i { transition: transform 0.3s ease; }
+        .back-btn:hover { color: var(--brand-gold); }
+        .back-btn:hover i { transform: translateX(-5px); }
+
+        /* Imágenes dentro del texto */
+        .img-float-right {
+            float: right; width: 45%; margin: 10px 0 20px 30px;
+            border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .img-float-left {
+            float: left; width: 45%; margin: 10px 30px 20px 0;
+            border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .img-full-width {
+            width: 100%; border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin: 30px 0;
+        }
+
+        /* Letra Capital */
+        .lead::first-letter {
+            font-family: 'Space Grotesk', monospace; font-size: 4.5rem; color: var(--brand-gold);
+            float: left; line-height: 0.8; margin-right: 12px; margin-top: 5px;
+        }
+
+        /* Etiquetas */
+        .article-tags {
+            margin-top: 50px; padding-top: 30px; border-top: 1px solid #222;
+            display: flex; flex-wrap: wrap; gap: 10px; align-items: center; clear: both;
+        }
+        .article-tags span { font-weight: 600; font-size: 0.9rem; margin-right: 10px;}
+        .tag {
+            background: #111; color: var(--gray-sub); padding: 6px 15px; border-radius: 20px;
+            font-size: 0.85rem; text-decoration: none; border: 1px solid #333; transition: var(--transition);
+        }
+        .tag:hover { background: var(--brand-gold); color: #000; border-color: var(--brand-gold); }
+
+        /* Compartir */
+        .share-section {
+            margin-top: 40px; display: flex; align-items: center; gap: 15px;
+            background: var(--card-bg); padding: 20px 30px; border-radius: 12px; border: 1px solid #1a1a1a;
+        }
+        .share-title { font-family: 'Space Grotesk', monospace; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;}
+        .share-btn {
+            display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;
+            border-radius: 50%; color: white; text-decoration: none; font-size: 1.2rem; transition: transform 0.3s ease;
+        }
+        .share-btn:hover { transform: translateY(-3px); }
+        .bg-fb { background: #1877F2; } .bg-tw { background: #000; border: 1px solid #333; } .bg-wa { background: #25D366; }
+
+        /* Footer */
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; }
+        .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
+        .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
+        .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
+        .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a:hover { color: var(--brand-gold); }
+
+        @media (max-width: 780px) {
+            .glass-nav { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .article-title { font-size: 2rem; }
+            .article-hero { height: 50vh; }
+            .img-float-right, .img-float-left { float: none; width: 100%; margin: 20px 0; }
+            .share-section { flex-direction: column; text-align: center; }
+        }
+    </style>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="hrGUPinvFqHevCHSaiu7Tw" async></script>
+</head>
+<body>
+
+<div class="glass-nav">
+    <div class="nav-logo">
+        <a href="/"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House"></a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#releases">Lanzamientos</a>
+        <a href="artistas.html">Artistas</a>
+        <a href="index.html#upcoming">Próximos</a>
+        <a href="index.html#aliados">Aliados</a>
+        <a href="samples.html">Samples</a>
+        <a href="demos.html">Demos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="blog.html" class="active">Blog</a>
+    </div>
+</div>
+
+<header class="article-hero reveal">
+    <div class="article-header-content">
+        <span class="article-category"><i class="fa-solid fa-music"></i> Lanzamiento Oficial</span>
+        <h1 class="article-title">Oh Lanana marca el regreso de Destro5 con una colaboración junto a Ómada y Onibas</h1>
+        <div class="article-meta">
+            <span><i class="fa-regular fa-calendar"></i> 16 de Marzo, 2026</span>
+            <span><i class="fa-solid fa-pen-nib"></i> Por Redacción QMC</span>
+        </div>
+    </div>
+</header>
+
+<main class="article-body">
+    
+    <a href="blog.html" class="back-btn reveal">
+        <i class="fa-solid fa-arrow-left"></i> Volver al Blog
+    </a>
+
+    <p class="lead reveal">El productor de música electrónica <strong>Destro5</strong> lanzó el pasado 6 de marzo su nuevo sencillo <strong>“Oh Lanana”</strong>, una colaboración junto a <strong>Ómada</strong> y <strong>Onibas</strong> que apuesta por un sonido vibrante dentro del EDM contemporáneo, combinando influencias de House, UK Bass y Afro-Latin House.</p> 
+    
+    <p class="reveal">El tema llega tras un largo proceso de producción marcado por desafíos técnicos que pusieron en riesgo el lanzamiento de la canción.</p>
+
+    <div class="reveal">
+        <img src="img/tu-imagen-1.jpg" alt="Destro5 en el estudio" class="img-float-right">
+        
+        <h2>Una canción que casi no ve la luz</h2>
+        <p>Según relata el propio artista, “Oh Lanana” comenzó como una idea compartida entre los tres productores con el objetivo de crear una pieza distinta dentro de la música electrónica. Sin embargo, el desarrollo del proyecto enfrentó múltiples dificultades durante su producción, incluyendo la pérdida de equipos y la aparente desaparición de las pistas vocales originales.</p>
+        
+        <p>Estos problemas técnicos prolongaron el proceso durante <strong>tres años</strong>, periodo en el que el proyecto estuvo cerca de quedar inconcluso. Finalmente, tras un arduo trabajo de recuperación de archivos y ajustes de producción, el equipo logró rescatar las voces originales y completar el track.</p>
+    </div>
+
+    <div class="reveal">
+        <img src="img/tu-imagen-2.jpg" alt="Ómada y Onibas" class="img-float-left">
+        
+        <h2>Un sonido que mezcla ritmos globales</h2>
+        <p>Desde 2015, Destro5 ha explorado diversos territorios dentro de la música electrónica, construyendo un estilo propio que integra House, UK Bass y Afro-Latin House, géneros que en los últimos años han ganado presencia en festivales y circuitos internacionales del EDM.</p>
+        
+        <p>La colaboración con Ómada y Onibas refuerza esta búsqueda sonora, apostando por una producción que combina ritmos bailables con una energía pensada para pistas de baile y playlists digitales, dos espacios clave para la difusión de la música electrónica actual.</p>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="reveal">
+        <h2>Una colaboración marcada por la perseverancia</h2>
+        <p>Para Destro5, el estreno de “Oh Lanana” representa más que un lanzamiento musical. El productor describe el tema como una muestra de paciencia, resiliencia y trabajo colaborativo, valores que permitieron que el proyecto finalmente llegara al público.</p>
+
+        <img src="img/tu-imagen-3.jpg" alt="Cover Art Oh Lanana" class="img-full-width">
+
+        <p>Con este lanzamiento, el artista busca ampliar el alcance de su propuesta dentro de la escena electrónica y posicionar la canción en playlists especializadas, blogs musicales y espacios dedicados al EDM, donde espera conectar con oyentes que buscan nuevas propuestas dentro del género.</p>
+        
+        <p>El estreno de “Oh Lanana” marca así un nuevo paso en la trayectoria de Destro5, quien continúa explorando fusiones rítmicas y colaboraciones que reflejan la diversidad sonora de la música electrónica contemporánea.</p>
+    </div>
+
+    <div class="article-tags reveal">
+        <span><i class="fa-solid fa-tags"></i> Etiquetas:</span>
+        <a href="#" class="tag">#OhLanana</a>
+        <a href="#" class="tag">#Destro5</a>
+        <a href="#" class="tag">#Omada</a>
+        <a href="#" class="tag">#Onibas</a>
+        <a href="#" class="tag">#UKBass</a>
+        <a href="#" class="tag">#AfroLatinHouse</a>
+    </div>
+
+    <div class="share-section reveal">
+        <span class="share-title">Compartir la reseña:</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://urbanhouse.world/blog_3.html" target="_blank" class="share-btn bg-fb" title="Compartir en Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=Lee%20todo%20sobre%20el%20lanzamiento%20de%20Oh%20Lanana%20por%20Destro5,%20Omada%20y%20Onibas&url=https://urbanhouse.world/blog_3.html" target="_blank" class="share-btn bg-tw" title="Compartir en X">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?text=Mira%20esta%20nota%20sobre%20el%20nuevo%20tema%20Oh%20Lanana:%20https://urbanhouse.world/blog_3.html" target="_blank" class="share-btn bg-wa" title="Compartir en WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    <div class="social">
+        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
+        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-compact-disc"></i></a>
+    </div>
+    
+    <div class="footer-nav">
+        <a href="index.html">Inicio</a> | 
+        <a href="artistas.html">Artistas</a> | 
+        <a href="samples.html">Samples</a> | 
+        <a href="eventos.html">Eventos</a> | 
+        <a href="demos.html">Demos</a> |
+        <a href="blog.html">Blog</a>
+    </div>
+
+    <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100); 
+    });
+</script>
+</body>
+</html>
