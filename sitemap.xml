@@ -5,7 +5,7 @@
     
     <url>
         <loc>https://urbanhouse.world/</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -17,35 +17,35 @@
 
     <url>
         <loc>https://urbanhouse.world/artistas.html</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
         <loc>https://urbanhouse.world/demos.html</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://urbanhouse.world/eventos.html</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://urbanhouse.world/samples.html</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://urbanhouse.world/blog.html</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -66,6 +66,44 @@
         <image:image>
             <image:loc>https://urbanhouse.world/img/0233bd82915a383b95ae9d123bcfea47.jpg</image:loc>
             <image:title>Birongo Live 2.0 en Caracas</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://urbanhouse.world/blog_2.html</loc>
+        <lastmod>2026-04-27</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+        <news:news>
+            <news:publication>
+                <news:name>Urban House Records</news:name>
+                <news:language>es</news:language>
+            </news:publication>
+            <news:publication_date>2026-04-27</news:publication_date>
+            <news:title>Oh Lanana marca el regreso de Destro5 con una colaboración junto a Ómada y Onibas</news:title>
+        </news:news>
+        <image:image>
+            <image:loc>https://urbanhouse.world/img/cover-oh-lanana.jpg</image:loc>
+            <image:title>Oh Lanana - Destro5, Ómada, Onibas</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://urbanhouse.world/blog_3.html</loc>
+        <lastmod>2026-04-27</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+        <news:news>
+            <news:publication>
+                <news:name>Urban House Records</news:name>
+                <news:language>es</news:language>
+            </news:publication>
+            <news:publication_date>2026-04-27</news:publication_date>
+            <news:title>Tréboll Lanza 'Uno Más que Ayer', un Manifiesto Sonoro que Redefine los Límites de la Música Electrónica</news:title>
+        </news:news>
+        <image:image>
+            <image:loc>https://urbanhouse.world/img/cover-treboll.jpg</image:loc>
+            <image:title>Tréboll - Uno Más que Ayer</image:title>
         </image:image>
     </url>
 
