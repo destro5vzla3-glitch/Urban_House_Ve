@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
     <meta name="description" content="Conoce a los artistas de Urban House Records. Talento emergente y consolidado en la escena de la música electrónica mundial.">
     <meta name="keywords" content="Artistas Urban House, DJs Venezuela, productores house, Destro5, Manamune, Extintor Bass, sello discográfico">
@@ -38,6 +38,10 @@
             overflow-x: hidden;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* --- Animaciones Reveal --- */
@@ -51,35 +55,38 @@
             transform: translateY(0);
         }
 
-        /* Navegación */
+        /* --- Navegación General --- */
         .glass-nav {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            z-index: 1000;
-            background: rgba(5, 5, 5, 0.92);
-            backdrop-filter: blur(16px);
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 16px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            transition: var(--transition);
+            padding: 15px 5%; display: flex; justify-content: space-between;
+            align-items: center; transition: var(--transition);
         }
-        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img { height: 45px; transition: var(--transition); }
         .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
-        .nav-links { display: flex; gap: 40px; }
+        
+        .nav-links { display: flex; gap: 35px; align-items: center; }
         .nav-links a {
             color: var(--pure-white); text-decoration: none;
-            font-weight: 500; letter-spacing: 0.5px;
-            font-size: 0.85rem; transition: var(--transition);
-            text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+            font-weight: 500; font-size: 0.85rem; transition: var(--transition);
+            text-transform: uppercase; font-family: 'Space Grotesk', monospace; letter-spacing: 0.5px;
         }
         .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
 
+        /* Botón de Hamburguesa (Oculto en Desktop) */
+        .hamburger-menu {
+            display: none;
+            color: var(--brand-gold);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .hamburger-menu:hover { transform: scale(1.1); }
+
         /* Header de la Página */
         .page-header {
-            padding: 160px 5% 80px;
+            padding: 180px 5% 80px;
             text-align: center;
             background: linear-gradient(180deg, rgba(12,12,12,1) 0%, rgba(5,5,5,1) 100%);
             border-bottom: 1px solid rgba(197, 160, 89, 0.15);
@@ -104,8 +111,10 @@
         /* Cuadrícula de Artistas */
         .artists-container {
             padding: 80px 5%;
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
+            flex: 1;
+            width: 100%;
         }
         
         .artists-grid {
@@ -189,21 +198,65 @@
         }
 
         /* Footer */
-        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: 60px; }
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: auto; width: 100%; }
         .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
         .social a { color: var(--pure-white); text-decoration: none; font-size: 1.5rem; transition: var(--transition); }
         .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
         .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace;}
         .footer-nav a:hover { color: var(--brand-gold); }
         footer p { font-size: 0.75rem; opacity: 0.7; }
 
-        @media (max-width: 780px) {
+        /* =========================================================================
+           DISEÑO RESPONSIVO (Móviles y Tablets)
+           ========================================================================= */
+        @media (max-width: 900px) {
+            /* Navbar Móvil: Menú Hamburguesa */
+            .glass-nav { padding: 15px 5%; }
+            .hamburger-menu { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 5, 5, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                gap: 25px;
+                border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+                
+                /* Estado Oculto (Cerrado) */
+                transform: translateY(-120%);
+                opacity: 0;
+                visibility: hidden;
+            }
+            /* Estado Visible (Abierto) */
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
             .page-title { font-size: 2.2rem; }
-            .glass-nav { flex-direction: column; gap: 15px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
-            .artists-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 30px 15px; }
+            header.page-header { padding: 150px 20px 60px; }
+            .artists-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 40px 15px; }
             .artist-photo-wrapper { width: 140px; height: 140px; }
+            
+            /* Hacemos que el rol del artista sea siempre visible en móviles para mejor UX */
+            .artist-info span {
+                opacity: 1;
+                transform: translateY(0);
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -213,7 +266,12 @@
     <div class="nav-logo">
         <a href="index.html"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
     </div>
-    <div class="nav-links">
+
+    <div class="hamburger-menu" id="hamburger-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="nav-links">
         <a href="index.html">Inicio</a>
         <a href="index.html#releases">Lanzamientos</a>
         <a href="artistas.html" class="active">Artistas</a>
@@ -389,6 +447,36 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // LÓGICA DEL MENÚ HAMBURGUESA (Móviles)
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const navLinksContainer = document.getElementById('nav-links');
+        const hamburgerIcon = hamburgerBtn.querySelector('i');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navLinksContainer.classList.toggle('active');
+            
+            // Cambiar ícono entre barras y X
+            if (navLinksContainer.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+            } else {
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+            }
+        });
+
+        // CERRAR MENÚ AL HACER CLIC EN UN ENLACE
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 900) {
+                    navLinksContainer.classList.remove('active');
+                    hamburgerIcon.classList.remove('fa-xmark');
+                    hamburgerIcon.classList.add('fa-bars');
+                }
+            });
+        });
+
         // ANIMACIONES REVEAL EN SCROLL
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
@@ -404,7 +492,6 @@
         }
         
         window.addEventListener("scroll", reveal);
-        // Llamar inmediatamente para mostrar los elementos que ya están en pantalla
         setTimeout(reveal, 100); 
     });
 </script>
