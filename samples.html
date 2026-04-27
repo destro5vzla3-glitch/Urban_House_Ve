@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
     <meta name="description" content="Descubre los mejores sample packs, loops y presets de Urban House Records. Herramientas profesionales de producción para House, Tech House y música electrónica. Próximamente.">
     <meta name="keywords" content="sample packs, house samples, tech house loops, presets, producción musical, Urban House Records, librerías de sonido, música electrónica">
@@ -39,7 +39,7 @@
             --pure-white: #ffffff;
             --gray-sub: #a0a0a0;
             --card-bg: #0c0c0c;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,41 +50,55 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Navegación */
+        /* --- Navegación General --- */
         .glass-nav {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(5, 5, 5, 0.92); backdrop-filter: blur(16px);
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 16px 5%; display: flex; justify-content: space-between;
-            align-items: center; flex-wrap: wrap;
+            padding: 15px 5%; display: flex; justify-content: space-between;
+            align-items: center; transition: var(--transition);
         }
-        .nav-logo img { height: 48px; transition: var(--transition); }
+        .nav-logo img { height: 45px; transition: var(--transition); }
         .nav-logo img:hover { transform: scale(1.02); opacity: 0.9; }
-        .nav-links { display: flex; gap: 40px; }
+        
+        .nav-links { display: flex; gap: 35px; align-items: center; }
         .nav-links a {
             color: var(--pure-white); text-decoration: none;
             font-weight: 500; font-size: 0.85rem; transition: var(--transition);
-            text-transform: uppercase; font-family: 'Space Grotesk', monospace;
+            text-transform: uppercase; font-family: 'Space Grotesk', monospace; letter-spacing: 0.5px;
         }
         .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
 
+        /* Botón de Hamburguesa (Oculto en Desktop) */
+        .hamburger-menu {
+            display: none;
+            color: var(--brand-gold);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .hamburger-menu:hover { transform: scale(1.1); }
+
         /* Header Interno */
         header.internal-header {
-            padding: 160px 20px 80px; text-align: center;
+            padding: 180px 20px 80px; text-align: center;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
             background: radial-gradient(circle at center, #111 0%, #050505 100%);
         }
         header.internal-header h1 {
             font-family: 'Space Grotesk', monospace; font-size: 3.5rem;
             color: var(--brand-gold); text-transform: uppercase; letter-spacing: 4px;
+            margin-bottom: 15px;
         }
         header.internal-header p {
-            color: var(--gray-sub); max-width: 600px; margin: 20px auto 0; font-size: 1.1rem;
+            color: var(--gray-sub); max-width: 600px; margin: 0 auto; font-size: 1.1rem;
         }
 
         /* Sección de Samples (Estado Vacío) */
@@ -129,17 +143,54 @@
         }
 
         /* Footer */
-        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: auto; }
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; margin-top: auto; width: 100%; }
         .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
         .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
         .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
         .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace; }
         .footer-nav a:hover { color: var(--brand-gold); }
 
-        @media (max-width: 780px) {
-            .glass-nav { flex-direction: column; gap: 15px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+        /* =========================================================================
+           DISEÑO RESPONSIVO (Móviles y Tablets)
+           ========================================================================= */
+        @media (max-width: 900px) {
+            /* Navbar Móvil: Menú Hamburguesa */
+            .glass-nav { padding: 15px 5%; }
+            .hamburger-menu { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 5, 5, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                gap: 25px;
+                border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+                
+                /* Estado Oculto (Cerrado) */
+                transform: translateY(-120%);
+                opacity: 0;
+                visibility: hidden;
+            }
+            /* Estado Visible (Abierto) */
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            header.internal-header { padding: 150px 20px 60px; }
             header.internal-header h1 { font-size: 2.5rem; }
             .empty-state { padding: 40px 20px; }
         }
@@ -151,7 +202,12 @@
     <div class="nav-logo">
         <a href="index.html"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
     </div>
-    <div class="nav-links">
+
+    <div class="hamburger-menu" id="hamburger-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="nav-links">
         <a href="index.html">Inicio</a>
         <a href="index.html#releases">Lanzamientos</a>
         <a href="artistas.html">Artistas</a>
@@ -199,5 +255,38 @@
     <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
 </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // LÓGICA DEL MENÚ HAMBURGUESA (Móviles)
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const navLinksContainer = document.getElementById('nav-links');
+        const hamburgerIcon = hamburgerBtn.querySelector('i');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navLinksContainer.classList.toggle('active');
+            
+            // Cambiar ícono entre barras y X
+            if (navLinksContainer.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+            } else {
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+            }
+        });
+
+        // CERRAR MENÚ AL HACER CLIC EN UN ENLACE
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 900) {
+                    navLinksContainer.classList.remove('active');
+                    hamburgerIcon.classList.remove('fa-xmark');
+                    hamburgerIcon.classList.add('fa-bars');
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
