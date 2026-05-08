@@ -23,8 +23,8 @@
     
     <style>
         :root {
-            --primary-black: #050505;
-            --brand-gold: #c5a059;
+            --primary-black: #030014;
+            --neon-purple: #a855f7; --neon-purple-deep: #7c3aed; --neon-orange: #ff6b35;
             --pure-white: #ffffff;
             --gray-sub: #a0a0a0;
             --card-bg: #0c0c0c;
@@ -49,8 +49,8 @@
         /* --- Navegación General --- */
         .glass-nav {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            background: rgba(3, 0, 20, 0.95); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
             padding: 15px 5%; display: flex; justify-content: space-between;
             align-items: center; transition: var(--transition);
         }
@@ -63,12 +63,12 @@
             font-weight: 500; font-size: 0.85rem; transition: var(--transition);
             text-transform: uppercase; font-family: 'Space Grotesk', monospace; letter-spacing: 0.5px;
         }
-        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+        .nav-links a:hover, .nav-links a.active { color: var(--neon-purple); }
 
         /* Botón de Hamburguesa (Oculto en Desktop) */
         .hamburger-menu {
             display: none;
-            color: var(--brand-gold);
+            color: var(--neon-purple);
             font-size: 1.8rem;
             cursor: pointer;
             transition: var(--transition);
@@ -93,7 +93,7 @@
         }
 
         .article-category {
-            color: var(--brand-gold);
+            color: var(--neon-purple);
             font-family: 'Space Grotesk', monospace;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -130,7 +130,7 @@
 
         .article-body p { margin-bottom: 25px; text-align: justify; }
         .article-body h2 { 
-            color: var(--brand-gold); 
+            color: var(--neon-purple); 
             font-family: 'Space Grotesk', monospace; 
             font-size: 1.8rem; 
             margin: 40px 0 20px 0; 
@@ -145,30 +145,30 @@
             transition: var(--transition);
         }
         .back-btn i { transition: transform 0.3s ease; }
-        .back-btn:hover { color: var(--brand-gold); }
+        .back-btn:hover { color: var(--neon-purple); }
         .back-btn:hover i { transform: translateX(-5px); }
 
         /* Imágenes dentro del texto */
         .img-float-right {
             float: right; width: 45%; margin: 10px 0 20px 30px;
-            border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 8px; border: 1px solid rgba(168, 85, 247, 0.3);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .img-float-left {
             float: left; width: 45%; margin: 10px 30px 20px 0;
-            border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 8px; border: 1px solid rgba(168, 85, 247, 0.3);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
         .img-full-width {
-            width: 100%; border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);
+            width: 100%; border-radius: 8px; border: 1px solid rgba(168, 85, 247, 0.3);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin: 30px 0;
         }
 
         /* Letra Capital */
         .lead::first-letter {
-            font-family: 'Space Grotesk', monospace; font-size: 4.5rem; color: var(--brand-gold);
+            font-family: 'Space Grotesk', monospace; font-size: 4.5rem; color: var(--neon-purple);
             float: left; line-height: 0.8; margin-right: 12px; margin-top: 5px;
         }
 
@@ -182,7 +182,7 @@
             background: #111; color: var(--gray-sub); padding: 6px 15px; border-radius: 20px;
             font-size: 0.85rem; text-decoration: none; border: 1px solid #333; transition: var(--transition);
         }
-        .tag:hover { background: var(--brand-gold); color: #000; border-color: var(--brand-gold); }
+        .tag:hover { background: var(--neon-purple); color: #000; border-color: var(--neon-purple); }
 
         /* Compartir */
         .share-section {
@@ -198,13 +198,13 @@
         .bg-fb { background: #1877F2; } .bg-tw { background: #000; border: 1px solid #333; } .bg-wa { background: #25D366; }
 
         /* Footer */
-        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #020202; }
+        footer { padding: 50px 5%; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray-sub); background: #030014; }
         .social { margin-bottom: 24px; display: flex; justify-content: center; gap: 30px; }
         .social a { color: var(--pure-white); font-size: 1.5rem; transition: var(--transition); }
-        .social a:hover { color: var(--brand-gold); transform: translateY(-3px); }
+        .social a:hover { color: var(--neon-purple); transform: translateY(-3px); }
         .footer-nav { margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
-        .footer-nav a:hover { color: var(--brand-gold); }
+        .footer-nav a:hover { color: var(--neon-purple); }
 
         /* =========================================================================
            DISEÑO RESPONSIVO (Móviles y Tablets)
@@ -218,13 +218,13 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(5, 5, 5, 0.98);
+                background: rgba(3, 0, 20, 0.98);
                 backdrop-filter: blur(20px);
                 flex-direction: column;
                 align-items: center;
                 padding: 30px 0;
                 gap: 25px;
-                border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+                border-bottom: 1px solid rgba(168, 85, 247, 0.2);
                 box-shadow: 0 10px 30px rgba(0,0,0,0.8);
                 
                 /* Estado Oculto (Cerrado) */
