@@ -20,15 +20,15 @@
     
     <style>
         :root {
-            --primary-black: #020202; /* Más profundo para el contraste del cristal */
-            --brand-gold: #c5a059;
-            --pure-white: #ffffff;
-            --gray-sub: #a0a0a0;
+            --primary-black: #030014; /* Más profundo para el contraste del cristal */
+            --neon-purple: #a855f7; --neon-purple-deep: #7c3aed; --neon-orange: #ff6b35; --neon-orange-warm: #f97316;
+            --pure-white: #f0f0f0;
+            --gray-sub: #8b8b9e;
             
             /* Variables Liquid Glass */
-            --liquid-bg: rgba(255, 255, 255, 0.02);
+            --liquid-bg: rgba(255, 255, 255, 0.03);
             --liquid-border: rgba(255, 255, 255, 0.08);
-            --liquid-glow: rgba(197, 160, 89, 0.15);
+            --liquid-glow-purple: rgba(168, 85, 247, 0.25); --liquid-glow-orange: rgba(255, 107, 53, 0.25);
             --glass-blur: blur(20px) saturate(180%);
             
             --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -53,11 +53,13 @@
         .liquid-ambient {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at 80% 20%, rgba(197, 160, 89, 0.03) 0%, transparent 50%),
-                        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
-            z-index: -1;
-            pointer-events: none;
+            z-index: -1; pointer-events: none; overflow: hidden;
         }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; }
+        .orb-1 { width: 600px; height: 600px; top: -10%; right: -5%; background: radial-gradient(circle, var(--neon-purple) 0%, transparent 70%); animation: floatOrb1 20s ease-in-out infinite; }
+        .orb-2 { width: 500px; height: 500px; bottom: -10%; left: -5%; background: radial-gradient(circle, var(--neon-orange) 0%, transparent 70%); animation: floatOrb2 25s ease-in-out infinite; }
+        @keyframes floatOrb1 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-80px,60px)} 66%{transform:translate(40px,30px)} }
+        @keyframes floatOrb2 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(60px,-80px)} 66%{transform:translate(-50px,-30px)} }
 
         /* --- Animaciones Reveal --- */
         .reveal {
@@ -74,7 +76,7 @@
         .glass-nav {
             position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
             width: 92%; max-width: 1400px; z-index: 1000;
-            background: rgba(5, 5, 5, 0.4);
+            background: rgba(3, 0, 20, 0.5);
             backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
             border: 1px solid var(--liquid-border); border-radius: 20px;
             padding: 12px 30px; display: flex; justify-content: space-between;
@@ -91,12 +93,12 @@
             text-transform: uppercase; font-family: 'Space Grotesk', monospace; letter-spacing: 1px;
         }
         .nav-links a:hover, .nav-links a.active { 
-            color: var(--brand-gold); text-shadow: 0 0 10px var(--liquid-glow);
+            color: var(--neon-purple); text-shadow: 0 0 10px var(--liquid-glow-purple);
         }
 
         /* Botón de Hamburguesa */
         .hamburger-menu {
-            display: none; color: var(--brand-gold);
+            display: none; color: var(--neon-purple);
             font-size: 1.5rem; cursor: pointer; transition: var(--transition);
         }
 
@@ -104,7 +106,7 @@
         .page-header {
             padding: 180px 5% 80px;
             text-align: center;
-            background: radial-gradient(ellipse at bottom, rgba(197,160,89,0.05) 0%, transparent 60%);
+            background: radial-gradient(ellipse at bottom, rgba(168,85,247,0.05) 0%, transparent 60%);
             border-bottom: 1px solid var(--liquid-border);
             position: relative;
         }
@@ -113,10 +115,12 @@
             font-size: 4rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 8px;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff 20%, rgba(255,255,255,0.5) 50%, var(--brand-gold) 100%);
+            background: linear-gradient(135deg, #fff 20%, var(--neon-purple) 60%, var(--neon-orange) 100%);
+            background-size: 200% 200%; animation: gradientShift 6s ease infinite;
             -webkit-background-clip: text; color: transparent;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 10px 30px rgba(168,85,247,0.3));
         }
+        @keyframes gradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
         .page-subtitle {
             color: var(--gray-sub); font-size: 1.15rem;
             max-width: 650px; margin: 0 auto; line-height: 1.8;
@@ -141,21 +145,63 @@
             align-items: center; gap: 20px; transition: var(--transition);
             width: 100%; cursor: pointer;
             
-            /* Estilos Liquid Glass inyectados */
-            background: var(--liquid-bg);
+            /* Estilos Liquid Glass */
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--liquid-border);
             border-radius: 30px;
             padding: 40px 20px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             position: relative; overflow: hidden;
+            border: 1px solid var(--liquid-border);
         }
 
-        /* Brillo interno de la tarjeta */
+        /* Borde Neon Animado */
         .artist-card-page::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 100%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
-            pointer-events: none;
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(
+                transparent, 
+                #00d2ff, /* Azul Neon */
+                transparent 15%, 
+                transparent 45%, 
+                var(--neon-orange), 
+                transparent 60%
+            );
+            animation: rotateBorder 3s linear infinite;
+            z-index: 0;
+            opacity: 0;
+            transition: var(--transition);
+            filter: blur(2px);
+        }
+
+        .artist-card-page::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: #030014;
+            border-radius: 28px;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .artist-card-page:hover::before { opacity: 1; }
+        .artist-card-page:hover::after { background: rgba(3,0,20,0.92); }
+
+        .artist-card-page:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px rgba(0,210,255,0.3);
+        }
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .artist-photo-wrapper, .artist-info, .artist-socials {
+            z-index: 2;
+            position: relative;
         }
 
         .artist-photo-wrapper {
@@ -182,7 +228,7 @@
         }
 
         .artist-info span {
-            color: var(--brand-gold); font-size: 0.8rem; font-weight: 600;
+            color: var(--neon-purple); font-size: 0.8rem; font-weight: 600;
             letter-spacing: 3px; text-transform: uppercase;
             opacity: 0.6; transform: translateY(0); transition: var(--transition);
             display: block; font-family: 'Space Grotesk', monospace;
@@ -191,14 +237,14 @@
         /* Hover Effects Liquid */
         .artist-card-page:hover {
             transform: translateY(-10px);
-            border-color: rgba(197, 160, 89, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--liquid-glow);
+            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--liquid-glow-purple);
             background: rgba(255,255,255,0.04);
         }
 
         .artist-card-page:hover .artist-photo-wrapper {
-            border-color: var(--brand-gold);
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.4), inset 0 0 20px rgba(0,0,0,0.8);
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), inset 0 0 20px rgba(0,0,0,0.8);
             transform: scale(1.05);
         }
 
@@ -206,13 +252,13 @@
             filter: grayscale(0%) contrast(1.05); transform: scale(1.1);
         }
 
-        .artist-card-page:hover .artist-info h3 { color: var(--brand-gold); text-shadow: 0 0 10px rgba(197,160,89,0.3); }
-        .artist-card-page:hover .artist-info span { opacity: 1; text-shadow: 0 0 8px rgba(197,160,89,0.4); }
+        .artist-card-page:hover .artist-info h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(168,85,247,0.3); }
+        .artist-card-page:hover .artist-info span { opacity: 1; text-shadow: 0 0 8px rgba(168,85,247,0.4); }
 
         /* --- Footer --- */
         footer { 
             padding: 60px 5%; text-align: center; border-top: 1px solid var(--liquid-border); 
-            color: var(--gray-sub); background: radial-gradient(circle at bottom center, rgba(197, 160, 89, 0.05) 0%, transparent 70%); 
+            color: var(--gray-sub); background: radial-gradient(circle at bottom center, rgba(168, 85, 247, 0.05) 0%, transparent 70%); 
             margin-top: auto; width: 100%; 
         }
         .social { margin-bottom: 30px; display: flex; justify-content: center; gap: 30px; }
@@ -223,10 +269,10 @@
             border-radius: 50%; background: var(--liquid-bg); border: 1px solid var(--liquid-border);
             backdrop-filter: blur(5px);
         }
-        .social a:hover { color: var(--brand-gold); transform: translateY(-5px); border-color: var(--brand-gold); box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px var(--liquid-glow); }
+        .social a:hover { color: var(--neon-purple); transform: translateY(-5px); border-color: var(--neon-purple); box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px var(--liquid-glow-purple); }
         .footer-nav { margin-bottom: 25px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.85rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace; letter-spacing: 1px;}
-        .footer-nav a:hover { color: var(--brand-gold); text-shadow: 0 0 8px var(--liquid-glow); }
+        .footer-nav a:hover { color: var(--neon-purple); text-shadow: 0 0 8px var(--liquid-glow-purple); }
         footer p { font-size: 0.8rem; opacity: 0.6; }
 
         /* =========================================================================
@@ -237,7 +283,7 @@
             .hamburger-menu { display: block; }
             .nav-links {
                 position: absolute; top: calc(100% + 10px); left: 0; width: 100%;
-                background: rgba(10, 10, 10, 0.85); backdrop-filter: var(--glass-blur);
+                background: rgba(3, 0, 20, 0.85); backdrop-filter: var(--glass-blur);
                 -webkit-backdrop-filter: var(--glass-blur); border-radius: 15px;
                 flex-direction: column; align-items: center; padding: 30px 0; gap: 25px;
                 border: 1px solid var(--liquid-border); box-shadow: 0 20px 40px rgba(0,0,0,0.8);
@@ -256,11 +302,87 @@
             .artist-info h3 { font-size: 1.1rem; }
             .artist-info span { opacity: 0.8; font-size: 0.7rem; letter-spacing: 1px; }
         }
+
+        
+        /* --- PRELOADER --- */
+        .preloader {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #030014; z-index: 9999;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+        }
+        .preloader.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
+        .preloader-logo {
+            width: 100px; height: 100px; margin-bottom: 50px;
+            animation: preloaderPulse 2.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px rgba(168,85,247,0.6));
+            z-index: 2;
+        }
+        .preloader-logo img { width: 100%; height: 100%; object-fit: contain; }
+        @keyframes preloaderPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 20px rgba(168,85,247,0.4))} 50%{transform:scale(1.1);filter:drop-shadow(0 0 50px rgba(168,85,247,0.8))} }
+        
+        .preloader-rings { position: relative; width: 160px; height: 160px; display: flex; justify-content: center; align-items: center; }
+        .ring {
+            position: absolute; border: 2px solid transparent; border-radius: 50%;
+        }
+        .ring-1 {
+            width: 160px; height: 160px; border-top-color: #a855f7;
+            animation: spinRing 2s linear infinite;
+        }
+        .ring-2 {
+            width: 140px; height: 140px; border-right-color: #ff6b35;
+            animation: spinRing 1.5s linear infinite reverse;
+        }
+        .ring-3 {
+            width: 120px; height: 120px; border-bottom-color: #00d2ff;
+            animation: spinRing 3s linear infinite;
+        }
+        @keyframes spinRing { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+        
+        .preloader-bar {
+            position: absolute; bottom: 12%; left: 50%; transform: translateX(-50%);
+            width: 250px; height: 4px; background: rgba(255,255,255,0.04);
+            border-radius: 4px; overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .preloader-bar-fill {
+            height: 100%; width: 0%; border-radius: 4px;
+            background: linear-gradient(90deg, #a855f7, #00d2ff, #ff6b35);
+            background-size: 200% 100%;
+            animation: fillBar 3s ease-in-out forwards;
+            box-shadow: 0 0 15px rgba(168,85,247,0.5);
+        }
+        @keyframes fillBar { 0%{width:0%} 100%{width:100%} }
+ 40%{width:60%} 80%{width:85%} 100%{width:100%} }
+        .preloader-text {
+            position: absolute; bottom: calc(15% + 20px); left: 50%; transform: translateX(-50%);
+            font-family: 'Space Grotesk', monospace; font-size: 0.7rem;
+            color: rgba(255,255,255,0.3); letter-spacing: 4px; text-transform: uppercase;
+        }
     </style>
 </head>
 <body id="top">
 
-<div class="liquid-ambient"></div>
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+    <div class="preloader-rings">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+    </div>
+    <div class="preloader-logo">
+        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Loading">
+    </div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+</div>
+
+<div class="liquid-ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
 
 <div class="glass-nav">
     <div class="nav-logo">
@@ -494,6 +616,15 @@
         window.addEventListener("scroll", reveal);
         setTimeout(reveal, 100); 
     });
+</script>
+<script>
+window.addEventListener("load", function() {
+    setTimeout(function() {
+        document.getElementById("preloader").classList.add("fade-out");
+        document.body.style.overflow = "auto";
+    }, 2000);
+});
+document.body.style.overflow = "hidden";
 </script>
 </body>
 </html>
