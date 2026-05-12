@@ -8,1066 +8,245 @@
     <meta name="keywords" content="Urban House, record label, sello discográfico, música house, lanzamientos, demos, artistas, Venezuela, house music, electronic label, deep house, latin house">
     <meta name="author" content="Urban House Records">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="es">
-    <meta name="geo.region" content="VE-A">
-    <meta name="geo.placename" content="Caracas">
     
     <title>Urban House | Sello Discográfico de House Music</title>
     
-    <link rel="canonical" href="https://urbanhouse.world/index.html">
-    
-    <meta property="og:title" content="Urban House | Sello Discográfico de House Music">
-    <meta property="og:description" content="Sello discográfico independiente de música electrónica en Caracas, Venezuela.">
-    <meta property="og:image" content="img/Logo_Urban_House_blanco-removebg-preview.png">
-    <meta property="og:url" content="https://urbanhouse.world/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_VE">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo - Urban House-UH.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --primary-black: #030014;
             --neon-purple: #a855f7;
-            --neon-purple-deep: #7c3aed;
             --neon-orange: #ff6b35;
-            --neon-orange-warm: #f97316;
             --pure-white: #f0f0f0;
-            --gray-sub: #8b8b9e;
-            --gray-light: #c0c0d0;
-            
-            --liquid-bg: rgba(255, 255, 255, 0.05);
             --liquid-border: rgba(255, 255, 255, 0.12);
-            --liquid-glow-purple: rgba(168, 85, 247, 0.3);
-            --liquid-glow-orange: rgba(255, 107, 53, 0.3);
-            --glass-blur: blur(25px) saturate(200%);
-            
-            --transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            --glass-blur: blur(20px) saturate(180%);
+            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        /* --- PRELOADER --- */
-        .preloader {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: #030014; z-index: 9999;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
-        }
-        .preloader.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
-        .preloader-logo {
-            width: 100px; height: 100px; margin-bottom: 50px;
-            animation: preloaderPulse 2.5s ease-in-out infinite;
-            filter: drop-shadow(0 0 40px rgba(168,85,247,0.6));
-            z-index: 2;
-        }
-        .preloader-logo img { width: 100%; height: 100%; object-fit: contain; }
-        @keyframes preloaderPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 20px rgba(168,85,247,0.4))} 50%{transform:scale(1.1);filter:drop-shadow(0 0 50px rgba(168,85,247,0.8))} }
-        
-        .preloader-rings { position: relative; width: 160px; height: 160px; display: flex; justify-content: center; align-items: center; }
-        .ring {
-            position: absolute; border: 2px solid transparent; border-radius: 50%;
-        }
-        .ring-1 {
-            width: 160px; height: 160px; border-top-color: var(--neon-purple);
-            animation: spinRing 2s linear infinite;
-        }
-        .ring-2 {
-            width: 140px; height: 140px; border-right-color: var(--neon-orange);
-            animation: spinRing 1.5s linear infinite reverse;
-        }
-        .ring-3 {
-            width: 120px; height: 120px; border-bottom-color: #00d2ff; /* Azul Neon */
-            animation: spinRing 3s linear infinite;
-        }
-        @keyframes spinRing { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-        
-        .preloader-bar {
-            position: absolute; bottom: 12%; left: 50%; transform: translateX(-50%);
-            width: 250px; height: 4px; background: rgba(255,255,255,0.04);
-            border-radius: 4px; overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-        .preloader-bar-fill {
-            height: 100%; width: 0%; border-radius: 4px;
-            background: linear-gradient(90deg, var(--neon-purple), #00d2ff, var(--neon-orange));
-            background-size: 200% 100%;
-            animation: fillBar 3s ease-in-out forwards, gradientShift 4s linear infinite;
-            box-shadow: 0 0 15px rgba(168,85,247,0.5);
-        }
-        @keyframes fillBar { 0%{width:0%} 100%{width:100%} }
-
-        /* --- CURSOR GLOW --- */
-        .cursor-glow {
-            position: fixed; width: 300px; height: 300px;
-            border-radius: 50%; pointer-events: none; z-index: 0;
-            background: radial-gradient(circle, rgba(168,85,247,0.06) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            transition: left 0.3s ease, top 0.3s ease;
-        }
-
         body {
             background-color: var(--primary-black);
             color: var(--pure-white);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
+            line-height: 1.5;
         }
 
-        /* --- Fondo de Refracción (Liquid Background) --- */
-        .liquid-ambient {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: -1; pointer-events: none; overflow: hidden;
-        }
-        .orb {
-            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4;
-        }
-        .orb-1 {
-            width: 600px; height: 600px; top: -10%; left: -5%;
-            background: radial-gradient(circle, var(--neon-purple) 0%, transparent 70%);
-            animation: floatOrb1 20s ease-in-out infinite;
-        }
-        .orb-2 {
-            width: 500px; height: 500px; bottom: -10%; right: -5%;
-            background: radial-gradient(circle, var(--neon-orange) 0%, transparent 70%);
-            animation: floatOrb2 25s ease-in-out infinite;
-        }
-        .orb-3 {
-            width: 400px; height: 400px; top: 50%; left: 40%;
-            background: radial-gradient(circle, var(--neon-purple-deep) 0%, transparent 70%);
-            animation: floatOrb3 18s ease-in-out infinite; opacity: 0.2;
-        }
-        @keyframes floatOrb1 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(80px,60px)} 66%{transform:translate(-40px,30px)} }
-        @keyframes floatOrb2 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-60px,-80px)} 66%{transform:translate(50px,-30px)} }
-        @keyframes floatOrb3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(100px,-60px)} }
-
-        /* --- Animaciones Reveal Variadas --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-left { opacity: 0; transform: translateX(-80px); transition: all 1s cubic-bezier(0.25,1,0.5,1); }
-        .reveal-right { opacity: 0; transform: translateX(80px); transition: all 1s cubic-bezier(0.25,1,0.5,1); }
-        .reveal-scale { opacity: 0; transform: scale(0.8); transition: all 1s cubic-bezier(0.25,1,0.5,1); }
-        .reveal-blur { opacity: 0; filter: blur(20px); transform: scale(1.1); transition: all 1.2s ease-out; }
-        .reveal-width { width: 0; overflow: hidden; opacity: 0; transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1); }
-        
-        .reveal-left.active, .reveal-right.active, .reveal-scale.active, .reveal-blur.active { opacity: 1; transform: translate(0) scale(1); filter: blur(0); }
-        .reveal-width.active { width: 100%; opacity: 1; }
-
-        /* --- Letter Animation --- */
-        .letter {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(50px) rotate(10deg);
-            filter: blur(10px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .letter.active {
-            opacity: 1;
-            transform: translateY(0) rotate(0deg);
-            filter: blur(0);
-        }
-
-        /* --- Moving Gradient Animation --- */
-        @keyframes movingGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .animated-gradient-text {
-            background: linear-gradient(90deg, #fff, var(--neon-purple), var(--neon-orange), #fff);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: movingGradient 8s linear infinite;
-        }
-
-        /* --- Scroll Indicator (Hero) --- */
-        .scroll-indicator {
-            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-            z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
-        }
-        .scroll-indicator span {
-            font-family: 'Space Grotesk', monospace; font-size: 0.65rem;
-            color: rgba(255,255,255,0.3); letter-spacing: 3px; text-transform: uppercase;
-        }
-        .scroll-mouse {
-            width: 24px; height: 38px; border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 12px; position: relative;
-        }
-        .scroll-mouse::before {
-            content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
-            width: 4px; height: 8px; border-radius: 4px;
-            background: linear-gradient(180deg, var(--neon-purple), var(--neon-orange));
-            animation: scrollDot 2s ease-in-out infinite;
-        }
-        @keyframes scrollDot { 0%{top:6px;opacity:1} 100%{top:22px;opacity:0} }
-
-        /* --- Navegación Liquid Glass --- */
+        /* --- NAVEGACIÓN --- */
         .glass-nav {
             position: fixed;
-            top: 20px; left: 50%;
+            top: 15px; left: 50%;
             transform: translateX(-50%);
-            width: 92%; max-width: 1400px;
+            width: 92%; max-width: 1200px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
             border: 1px solid var(--liquid-border);
-            border-radius: 24px;
-            padding: 14px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 
-                0 15px 35px rgba(0,0,0,0.5),
-                inset 0 1px 1px rgba(255,255,255,0.1),
-                inset 0 -1px 1px rgba(0,0,0,0.2);
-            transition: var(--transition);
-            overflow: hidden;
+            border-radius: 20px;
+            padding: 12px 25px;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .glass-nav::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
-            transform: rotate(45deg);
-            pointer-events: none;
-            transition: 0.8s;
+
+        .nav-logo img { height: 35px; }
+
+        .nav-links {
+            display: flex; gap: 20px;
         }
-        .glass-nav:hover::before { left: 100%; }
-        .glass-nav.scrolled { background: rgba(3,0,20,0.8); box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 20px rgba(168,85,247,0.1); }
-        .nav-logo img { height: 40px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); transition: var(--transition); }
-        .nav-logo img:hover { transform: scale(1.05); }
-        
-        .nav-links { display: flex; gap: 30px; align-items: center; }
+
         .nav-links a {
-            color: rgba(255, 255, 255, 0.6); text-decoration: none;
-            font-weight: 500; letter-spacing: 1px;
-            font-size: 0.8rem; transition: var(--transition);
-            text-transform: uppercase; font-family: 'Space Grotesk', monospace;
-            position: relative;
-        }
-        .nav-links a:hover, .nav-links a.active { 
-            color: var(--neon-purple); 
-            text-shadow: 0 0 15px var(--liquid-glow-purple);
-        }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-            background: linear-gradient(90deg, var(--neon-purple), var(--neon-orange));
-            transition: width 0.3s ease; border-radius: 2px;
-        }
-        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
-        .hamburger-menu {
-            display: none; color: var(--neon-purple);
-            font-size: 1.5rem; cursor: pointer; transition: var(--transition);
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none; font-size: 0.75rem;
+            text-transform: uppercase; font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 1px; transition: var(--transition);
         }
 
-        /* --- Hero Section --- */
+        .nav-links a:hover { color: var(--neon-purple); }
+
+        /* --- HERO SECTION --- */
         header.dynamic-header {
-            min-height: 100vh; 
+            height: 100vh;
             display: flex; flex-direction: column;
-            justify-content: center; align-items: center; 
-            text-align: center;
-            padding: 120px 20px 80px 20px; 
-            position: relative; overflow: hidden;
-            border-bottom: 1px solid var(--liquid-border);
+            justify-content: center; align-items: center;
+            position: relative; text-align: center; padding: 0 20px;
         }
-
-        .carousel-background {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; background-color: var(--primary-black); overflow: hidden;
-        }
-
-        .carousel-track {
-            display: flex; width: max-content; height: 100%;
-            animation: slideCarousel 25s infinite ease-in-out;
-        }
-
-        .slide {
-            width: 100vw; height: 100%; flex-shrink: 0;
-            background-size: cover; background-position: center top;
-            filter: blur(2px) scale(1.05); /* Efecto cinemático sutil */
-        }
-
-        .slide-1 { background-image: url('img/Diseño sin título (5).png'); }
-        .slide-2 { background-image: url('img/e82955ab601fd210a1988c120cfb522b (1).jpg'); }
-        .slide-3 { background-image: url('img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg'); }
-        .slide-4 { background-image: url('img/0233bd82915a383b95ae9d123bcfea47.jpg'); }
-        .slide-5 { background-image: url('img/8916f27dbc3a93740de23838352c3f40 (1).jpg'); }
-
-        @keyframes slideCarousel {
-            0%, 15%   { transform: translateX(0); }
-            20%, 35%  { transform: translateX(-100vw); }
-            40%, 55%  { transform: translateX(-200vw); }
-            60%, 75%  { transform: translateX(-300vw); }
-            80%, 95%  { transform: translateX(-400vw); }
-            100%      { transform: translateX(-500vw); }
-        }
-
-        .video-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(3,0,20,0.3) 0%, rgba(3,0,20,0.95) 100%); 
-            z-index: 2;
-        }
-
-        .header-content { position: relative; z-index: 3; }
 
         h1 {
-            font-family: 'Space Grotesk', monospace; font-size: 4.5rem;
-            margin: 0; letter-spacing: 8px; text-transform: uppercase;
-            font-weight: 700; 
-            background: linear-gradient(135deg, #fff 0%, var(--neon-purple) 50%, var(--neon-orange) 100%);
-            background-size: 200% 200%;
-            animation: gradientShift 6s ease infinite;
-            -webkit-background-clip: text; color: transparent; margin-bottom: 20px;
-            filter: drop-shadow(0 10px 30px rgba(168,85,247,0.3));
-        }
-        @keyframes gradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
-        @media (min-width: 1200px) { h1 { font-size: 6rem; } }
-        
-        .label-type {
-            color: var(--neon-purple); letter-spacing: 10px; font-size: 0.9rem;
-            margin-bottom: 40px; font-weight: 500; text-transform: uppercase;
-            font-family: 'Space Grotesk', monospace; text-shadow: 0 0 20px var(--liquid-glow-purple);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5.5rem); /* Tamaño fluido */
+            letter-spacing: 5px; line-height: 1.1;
+            background: linear-gradient(135deg, #fff, var(--neon-purple), var(--neon-orange));
+            -webkit-background-clip: text; color: transparent;
+            margin-bottom: 10px;
         }
 
-        /* --- Secciones Generales --- */
+        /* --- CONTENEDORES RESPONSIVOS --- */
         .intro-wrapper {
-            max-width: 1100px; margin: 100px auto; padding: 80px 8%;
-            text-align: center; 
+            max-width: 900px; margin: 60px auto;
+            padding: 40px 25px;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--liquid-border);
-            border-radius: 40px;
+            border-radius: 30px;
             backdrop-filter: var(--glass-blur);
-            box-shadow: 
-                0 40px 100px rgba(0,0,0,0.4),
-                inset 0 1px 1px rgba(255,255,255,0.05),
-                inset 0 -1px 1px rgba(0,0,0,0.2);
-            position: relative; overflow: hidden;
         }
-        .intro-wrapper::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
-            transform: rotate(45deg);
-            pointer-events: none;
-            animation: sheen 10s infinite;
-        }
-        @keyframes sheen {
-            0% { transform: rotate(45deg) translateX(-100%); }
-            100% { transform: rotate(45deg) translateX(100%); }
-        }
-        .intro-title {
-            font-family: 'Space Grotesk', monospace; font-size: 1.5rem;
-            color: var(--neon-purple); letter-spacing: 6px; text-transform: uppercase;
-            margin-bottom: 30px; font-weight: 700;
-            text-shadow: 0 0 20px var(--liquid-glow-purple);
-            background: linear-gradient(90deg, var(--neon-purple), var(--neon-orange));
-            -webkit-background-clip: text; color: transparent;
-        }
-        .intro-text { font-size: 1.1rem; line-height: 1.8; color: #b0b0c0; }
-        .intro-text p { margin-bottom: 20px; }
-        .intro-text strong { color: var(--pure-white); font-weight: 600; text-shadow: 0 0 8px rgba(168,85,247,0.3);}
-        .intro-text a { color: var(--neon-orange); text-decoration: none; border-bottom: 1px solid rgba(255,107,53,0.3); transition: var(--transition); }
-        .intro-text a:hover { border-color: var(--neon-orange); text-shadow: 0 0 10px var(--liquid-glow-orange); }
 
-        section { padding: 60px 5%; max-width: 1400px; margin: 0 auto; }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px; margin: 0 auto;
+        }
+
         h2 {
-            font-family: 'Space Grotesk', monospace; font-size: 2rem;
-            text-transform: uppercase; border-left: 4px solid var(--neon-purple);
-            border-image: linear-gradient(180deg, var(--neon-purple), var(--neon-orange)) 1;
-            padding-left: 20px; margin-bottom: 50px; font-weight: 600;
-            display: flex; align-items: center; gap: 15px;
-            text-shadow: 0 0 20px var(--liquid-glow-purple);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--neon-purple);
+            padding-left: 15px;
         }
 
-        /* --- Carrusel de Lanzamientos (Liquid Cards) --- */
-        /* Carrusel de Lanzamientos */
-        .carousel-wrapper {
-            position: relative; width: 100%;
-            display: flex; align-items: center;
-        }
-
+        /* --- CARRUSEL ADAPTADO --- */
         .carousel-container {
-            display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
-            gap: 30px; padding: 20px 0 40px; scrollbar-width: none; /* Ocultar scrollbar */
-            scroll-behavior: smooth; width: 100%;
+            display: flex; overflow-x: auto;
+            gap: 20px; padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
         }
         .carousel-container::-webkit-scrollbar { display: none; }
 
-        .carousel-btn {
-            position: absolute; top: 40%; transform: translateY(-50%);
-            width: 50px; height: 50px; border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--liquid-border);
-            color: white; display: flex; justify-content: center; align-items: center;
-            cursor: pointer; z-index: 10; transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        .carousel-btn:hover {
-            background: var(--neon-purple);
-            box-shadow: 0 0 20px var(--liquid-glow-purple);
-            transform: translateY(-50%) scale(1.1);
-        }
-        .carousel-btn.prev { left: -25px; }
-        .carousel-btn.next { right: -25px; }
-
-        @media (max-width: 900px) {
-            .carousel-btn { display: none; }
-            .carousel-container { padding: 20px 5%; }
-        }
-
         .release-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            border-radius: 28px; overflow: hidden;
-            transition: var(--transition); 
-            border: 1px solid var(--liquid-border);
-            flex: 0 0 calc(33.333% - 20px); min-width: 320px; max-width: 420px;
-            scroll-snap-align: start; cursor: pointer; position: relative;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.4);
-            display: flex; flex-direction: column;
+            flex: 0 0 280px; /* Ancho fijo para mantener forma en móvil */
+            scroll-snap-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px; border: 1px solid var(--liquid-border);
+            overflow: hidden;
         }
 
-        /* Borde Neon Animado (Igual al de Artistas) */
-        .release-card::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: conic-gradient(
-                transparent, 
-                #00d2ff, /* Azul Neon */
-                transparent 15%, 
-                transparent 45%, 
-                var(--neon-orange), 
-                transparent 60%
-            );
-            animation: rotateBorder 3s linear infinite;
-            z-index: 0;
-            opacity: 0;
-            transition: var(--transition);
-            filter: blur(2px); /* Glow effect */
+        .release-img { width: 100%; aspect-ratio: 1/1; }
+        .release-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .release-info { padding: 15px; }
+
+        /* --- GRID DE PRÓXIMOS --- */
+        .upcoming-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .release-card::after {
-            content: '';
-            position: absolute;
-            inset: 3px; /* Borde más ancho */
-            background: #030014;
-            border-radius: 26px;
-            z-index: 1;
-            transition: var(--transition);
-        }
-
-        .release-card:hover::before { opacity: 1; }
-        .release-card:hover::after { background: rgba(3,0,20,0.92); }
-
-        .release-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px rgba(0,210,255,0.3);
-        }
-
-        .release-img, .release-info {
-            z-index: 2;
-            position: relative;
-        }
-
-        .release-card.playing { 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 30px var(--liquid-glow-purple); 
-            transform: translateY(-10px); 
-        }
-        .release-card.playing::before { opacity: 1; filter: blur(3px); }
-
-        .release-img { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; position: relative; border-radius: 18px 18px 0 0; }
-        .release-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        
-        .play-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3); backdrop-filter: blur(4px);
-            display: flex; justify-content: center; align-items: center;
-            opacity: 0; transition: var(--transition);
-            color: var(--pure-white); font-size: 4rem; text-shadow: 0 0 20px rgba(255,255,255,0.5);
-        }
-        
-        .release-card:hover .release-img img { transform: scale(1.08); }
-        .release-card:hover .play-overlay { opacity: 1; }
-        .release-card.playing .play-overlay { opacity: 1; background: rgba(3,0,20,0.6); color: var(--neon-purple); }
-        
-        .playing-indicator {
-            position: absolute; bottom: 20px; right: 20px;
-            display: none; gap: 4px; height: 20px; align-items: flex-end;
-        }
-        .release-card.playing .playing-indicator { display: flex; }
-        .bar { width: 5px; background: linear-gradient(180deg, var(--neon-purple), var(--neon-orange)); border-radius: 2px; animation: eq 1s infinite alternate ease-in-out; box-shadow: 0 0 8px var(--neon-purple); }
-        .bar:nth-child(2) { animation-delay: 0.2s; }
-        .bar:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes eq { 0% { height: 5px; } 100% { height: 20px; } }
-
-        .release-info { padding: 25px; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.5)); }
-        .release-title { font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 8px; font-family: 'Space Grotesk', monospace; color: #fff;}
-        .release-artist { color: var(--neon-purple); font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
-
-        /* Próximos Lanzamientos (Liquid Cards) */
-        .upcoming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .upcoming-card {
-            background: var(--liquid-bg); backdrop-filter: var(--glass-blur);
-            border-radius: 20px; padding: 20px; border: 1px solid var(--liquid-border);
-            transition: var(--transition);
-        }
-        .upcoming-card:hover { border-color: var(--neon-purple); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 20px var(--liquid-glow-purple); }
-        
-        .upcoming-img {
-            width: 100%; aspect-ratio: 1 / 1; border-radius: 12px;
-            overflow: hidden; margin-bottom: 20px; position: relative;
-        }
-        .upcoming-img img {
-            width: 100%; height: 100%; object-fit: cover; opacity: 0.7;
-            transition: var(--transition); filter: grayscale(50%) contrast(1.2);
-        }
-        .upcoming-card:hover .upcoming-img img { opacity: 1; transform: scale(1.05); filter: grayscale(0%); }
-        .upcoming-badge {
-            position: absolute; top: 15px; right: 15px; background: rgba(168,85,247,0.2);
-            color: var(--neon-purple); padding: 8px 16px; font-size: 0.75rem;
-            backdrop-filter: blur(10px); border: 1px solid rgba(168,85,247,0.3);
-            font-weight: 700; border-radius: 30px; font-family: 'Space Grotesk', monospace;
-            letter-spacing: 1px; text-transform: uppercase;
-            animation: pulseBadge 2s ease-in-out infinite;
-        }
-        @keyframes pulseBadge { 0%,100%{box-shadow: 0 0 5px rgba(168,85,247,0.3)} 50%{box-shadow: 0 0 20px rgba(168,85,247,0.5)} }
-
-        /* Sección de Aliados */
-        .partners-section {
-            padding: 80px 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent);
-            border-top: 1px solid var(--liquid-border);
-            border-bottom: 1px solid var(--liquid-border);
-            margin: 60px 0; max-width: 100%; width: 100%;
-        }
-        .partners-title {
-            text-align: center; font-family: 'Space Grotesk', monospace;
-            font-size: 1.1rem; color: var(--neon-purple); text-transform: uppercase;
-            letter-spacing: 6px; margin-bottom: 60px; font-weight: 500;
-            text-shadow: 0 0 15px var(--liquid-glow-purple);
-        }
-        .partners-wrapper {
-            display: flex; overflow: hidden; width: 100%; position: relative;
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        }
-        .partners-track {
-            display: flex; flex-shrink: 0; align-items: center;
-            gap: 150px; padding-right: 150px; width: max-content;
-            animation: scroll-partners 45s linear infinite; 
-        }
-        .partners-wrapper:hover .partners-track { animation-play-state: paused; }
-        .partners-track img {
-            height: 70px; object-fit: contain; opacity: 0.4;
-            transition: var(--transition); filter: grayscale(100%) brightness(1.5);
-        }
-        .partners-track img:hover { opacity: 1; filter: grayscale(0%) brightness(1); transform: scale(1.1) drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
-        @keyframes scroll-partners { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-
-        /* Footer */
-        .footer-separator {
-            width: 200px; height: 2px; margin: 0 auto 60px;
-            background: linear-gradient(90deg, transparent, var(--neon-purple), var(--neon-orange), transparent);
-            border-radius: 2px;
-        }
-        footer { 
-            padding: 80px 5% 60px; text-align: center;
-            color: var(--gray-sub); background: radial-gradient(circle at bottom center, rgba(168, 85, 247, 0.08) 0%, transparent 70%); 
-            margin-top: 40px; position: relative;
-        }
-        .social { margin-bottom: 40px; display: flex; justify-content: center; gap: 35px; }
-        .social a { 
-            color: var(--pure-white); text-decoration: none; font-size: 1.8rem; 
-            transition: var(--transition); width: 55px; height: 55px; 
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 16px; background: var(--liquid-bg); border: 1px solid var(--liquid-border);
-            backdrop-filter: blur(10px); position: relative; overflow: hidden;
-        }
-        .social a::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(255,107,53,0.15));
-            opacity: 0; transition: opacity 0.3s ease; border-radius: 16px;
-        }
-        .social a:hover::before { opacity: 1; }
-        .social a:hover { color: var(--neon-purple); transform: translateY(-5px) scale(1.05); border-color: rgba(168,85,247,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--liquid-glow-purple); }
-        .footer-nav { margin-bottom: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .footer-nav a { color: var(--gray-sub); text-decoration: none; font-size: 0.95rem; transition: var(--transition); text-transform: uppercase; font-family: 'Space Grotesk', monospace; letter-spacing: 1px;}
-        .footer-nav a:hover { color: var(--neon-orange); text-shadow: 0 0 8px var(--liquid-glow-orange); }
-        footer p { font-size: 0.85rem; opacity: 0.6; }
-
-        /* =========================================================================
-           DISEÑO RESPONSIVO (Móviles y Tablets)
-           ========================================================================= */
-        @media (max-width: 900px) {
-            .glass-nav {
-                width: 95%; top: 15px; padding: 15px 25px; border-radius: 15px;
-            }
-            .hamburger-menu { display: block; }
+        /* --- RESPONSIVE MOBILE ESTRÍCTO --- */
+        @media (max-width: 850px) {
             .nav-links {
-                position: absolute; top: calc(100% + 10px); left: 0; width: 100%;
-                background: rgba(10, 10, 10, 0.85); backdrop-filter: var(--glass-blur);
-                -webkit-backdrop-filter: var(--glass-blur); border-radius: 15px;
-                flex-direction: column; align-items: center; padding: 30px 0; gap: 25px;
-                border: 1px solid var(--liquid-border);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-                transform: translateY(-20px); opacity: 0; visibility: hidden; transition: var(--transition);
+                position: absolute; top: 80px; left: 0;
+                width: 100%; flex-direction: column;
+                background: rgba(3, 0, 20, 0.95);
+                padding: 30px; border-radius: 0 0 20px 20px;
+                border-bottom: 1px solid var(--liquid-border);
+                display: none; /* Se activa con JS */
             }
-            .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
-            .nav-links a { font-size: 1rem; width: 100%; text-align: center; padding: 10px 0; }
-
-            h1 { font-size: 2.8rem; letter-spacing: 4px; }
-            .label-type { font-size: 0.75rem; letter-spacing: 6px; }
-            h2 { font-size: 1.5rem; margin-bottom: 35px; }
+            .nav-links.active { display: flex; }
             
-            .intro-wrapper { padding: 40px 5%; border-radius: 20px; }
-            .intro-text { font-size: 1rem; text-align: left; }
+            .hamburger-menu { display: block; font-size: 1.5rem; cursor: pointer; }
             
-            .release-card { flex: 0 0 85%; min-width: 260px; }
-            .partners-track { gap: 60px; padding-right: 60px; }
-            .partners-track img { height: 45px; }
+            .release-card { flex: 0 0 75vw; } /* Se ven "cortadas" para invitar al scroll */
         }
 
-        @media (min-width: 1920px) {
-            .partners-track { gap: 180px; padding-right: 180px; }
-            .partners-track img { height: 90px; }
-            h1 { font-size: 7rem; }
-            .label-type { font-size: 1.2rem; }
-            .intro-text { font-size: 1.3rem; }
+        @media (min-width: 851px) {
+            .hamburger-menu { display: none; }
         }
+
+        /* Fondo Animado (Simplificado para performance en móvil) */
+        .liquid-ambient {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden;
+        }
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.3;
+        }
+        .orb-1 { width: 300px; height: 300px; background: var(--neon-purple); top: -10%; left: -10%; }
+        .orb-2 { width: 300px; height: 300px; background: var(--neon-orange); bottom: -10%; right: -10%; }
     </style>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="hrGUPinvFqHevCHSaiu7Tw" async></script>
 </head>
-<body id="top">
-
-<!-- PRELOADER -->
-<div class="preloader" id="preloader">
-    <div class="preloader-rings">
-        <div class="ring ring-1"></div>
-        <div class="ring ring-2"></div>
-        <div class="ring ring-3"></div>
-    </div>
-    <div class="preloader-logo">
-        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Loading">
-    </div>
-    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
-</div>
-
-<!-- CURSOR GLOW -->
-<div class="cursor-glow" id="cursor-glow"></div>
+<body>
 
 <div class="liquid-ambient">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
 </div>
 
-<div class="glass-nav">
+<nav class="glass-nav">
     <div class="nav-logo">
-        <a href="/"><img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Urban House Logo"></a>
+        <img src="img/Logo_Urban_House_blanco-removebg-preview.png" alt="Logo">
     </div>
     
-    <div class="hamburger-menu" id="hamburger-menu">
+    <div class="hamburger-menu" id="mobile-btn">
         <i class="fa-solid fa-bars"></i>
     </div>
 
-    <div class="nav-links" id="nav-links">
-        <a href="/" class="active">Inicio</a>
-        <a href="#releases">Lanzamientos</a>
-        <a href="artistas.html">Artistas</a>
+    <div class="nav-links" id="menu">
+        <a href="#top">Inicio</a>
+        <a href="#releases">Música</a>
         <a href="#upcoming">Próximos</a>
-        <a href="#aliados">Aliados</a>
-        <a href="samples.html">Samples</a>
         <a href="demos.html">Demos</a>
-        <a href="eventos.html">Eventos</a>
-        <a href="blog.html">Blog</a> 
     </div>
-</div>
+</nav>
 
 <header class="dynamic-header">
-    <div class="carousel-background">
-        <div class="carousel-track">
-            <div class="slide slide-1"></div>
-            <div class="slide slide-2"></div>
-            <div class="slide slide-3"></div>
-            <div class="slide slide-4"></div>
-            <div class="slide slide-5"></div>
-            <div class="slide slide-1"></div>
-        </div>
-    </div>
-    
-    <div class="video-overlay"></div>
-    
-    <div class="header-content">
-        <h1 class="reveal-blur letter-animate" id="main-title">URBAN HOUSE</h1>
-        <div class="label-type reveal-blur animated-gradient-text" style="animation-delay: 0.5s">RECORD LABEL · CARACAS</div>
-    </div>
-    
-    <div class="scroll-indicator">
-        <div class="scroll-mouse"></div>
-        <span>Scroll</span>
-    </div>
+    <h1>URBAN HOUSE</h1>
+    <p style="letter-spacing: 5px; color: var(--neon-purple); font-weight: 600; font-size: 0.8rem;">RECORD LABEL • CARACAS</p>
 </header>
 
-<div class="intro-wrapper reveal-blur">
-    <div class="intro-title"><i class="fa-solid fa-compact-disc"></i> Urban House Records</div>
-    <div class="intro-text">
-        <p><strong>Urban House Records</strong> es el <strong>sello discográfico</strong> independiente con sede en Caracas, Venezuela, diseñado para impulsar el talento emergente y consolidado en la escena global de la <strong>música electrónica</strong>.</p>
-        
-        <p>Nuestra visión se enfoca en llevar la más pura <strong>House Music</strong> a las pistas de baile de todo el mundo. Nos especializamos en explorar y difundir géneros de alta energía como el Deep House, Tech House y Latin House. Con distribución global a través de Beatport, Traxsource, Spotify y Apple Music, logramos posicionar el trabajo de nuestros <a href="artistas.html">artistas</a> en los mejores charts internacionales.</p>
-        
-        <p>Creemos en la evolución del sonido y apoyamos a los creadores. Por eso, ofrecemos <a href="samples.html">paquetes de samples</a> exclusivos para productores, organizamos <a href="eventos.html">eventos</a> para conectar a la comunidad y siempre estamos en la búsqueda de nuevas propuestas. Si tienes un sonido único, envíanos tus <a href="demos.html">demos</a> y únete a nuestra familia.</p>
-    </div>
-</div>
-
-<section id="releases" class="reveal-width">
-    <h2 class="reveal-left animated-gradient-text"><i class="fa-solid fa-headphones-simple"></i> Últimos Lanzamientos</h2>
-    
-    <div class="carousel-wrapper">
-        <button class="carousel-btn prev" id="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
-        
-        <div class="carousel-container" id="carousel-container">
-            
-            <!-- TRACK 1: TVTV -->
-            <div class="release-card" data-audio="musica/Extintor Bass Destro5 - T.V.T.V.mp3.mpga">
-                <div class="release-img">
-                    <img src="img/0233bd82915a383b95ae9d123bcfea47.jpg" alt="T.V.T.V" loading="lazy">
-                    <div class="play-overlay"><i class="fa-solid fa-circle-play play-icon"></i></div>
-                    <div class="playing-indicator"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-                <div class="release-info">
-                    <span class="release-title">T.V.T.V</span>
-                    <span class="release-artist"><i class="fa-solid fa-user-astronaut"></i> Extintor Bass & Destro5</span>
-                </div>
-            </div>
-
-            <!-- TRACK 2: BEAT ON THE DRUMS -->
-            <div class="release-card" data-audio="musica/Destro5 - Beat On The Drums.mp3.mpga">
-                <div class="release-img">
-                    <img src="img/8916f27dbc3a93740de23838352c3f40 (1).jpg" alt="Beat On The Drums" loading="lazy">
-                    <div class="play-overlay"><i class="fa-solid fa-circle-play play-icon"></i></div>
-                    <div class="playing-indicator"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-                <div class="release-info">
-                    <span class="release-title">Beat On The Drums</span>
-                    <span class="release-artist"><i class="fa-solid fa-user-astronaut"></i> Destro5</span>
-                </div>
-            </div>
-            
-            <!-- TRACK 3: OH LANANA -->
-            <div class="release-card" data-audio="musica/Destro5 mada - Oh Lanana (feat. Onibas) (1).mp3(1).mpga">
-                <div class="release-img">
-                    <img src="img/DESTRO5  COVEART 2026 3 (1).png" alt="Oh Lanana" loading="lazy">
-                    <div class="play-overlay"><i class="fa-solid fa-circle-play play-icon"></i></div>
-                    <div class="playing-indicator"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-                <div class="release-info">
-                    <span class="release-title">Oh Lanana</span>
-                    <span class="release-artist"><i class="fa-solid fa-user-astronaut"></i> Destro5 X ómada Ft. Onibas & Manamune</span>
-                </div>
-            </div>
-
-            <!-- TRACK 4: SPECTRA (Placeholder Audio) -->
-            <div class="release-card" data-audio="musica/Extintor Bass Destro5 - T.V.T.V.mp3.mpga">
-                <div class="release-img">
-                    <img src="img/1bb43d27d1d7cb74257d0aaff653f8aa.jpg" alt="Spectra" loading="lazy">
-                    <div class="play-overlay"><i class="fa-solid fa-circle-play play-icon"></i></div>
-                    <div class="playing-indicator"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-                <div class="release-info">
-                    <span class="release-title">Spectra</span>
-                    <span class="release-artist"><i class="fa-solid fa-user-astronaut"></i> Destro5</span>
-                </div>
-            </div>
-
-            <!-- TRACK 5: SOULFUL 2.0 (Placeholder Audio) -->
-            <div class="release-card" data-audio="musica/Destro5 - Beat On The Drums.mp3.mpga">
-                <div class="release-img">
-                    <img src="img/e82955ab601fd210a1988c120cfb522b (1).jpg" alt="Soulful 2.0" loading="lazy">
-                    <div class="play-overlay"><i class="fa-solid fa-circle-play play-icon"></i></div>
-                    <div class="playing-indicator"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-                <div class="release-info">
-                    <span class="release-title">Soulful 2.0</span>
-                    <span class="release-artist"><i class="fa-solid fa-user-astronaut"></i> Destro5</span>
-                </div>
-            </div>
-
-        </div>
-
-        <button class="carousel-btn next" id="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
+<section class="intro-wrapper">
+    <p><strong>Urban House Records</strong> es el sello independiente de Caracas diseñado para impulsar la música electrónica global. Nos enfocamos en el sonido puro de la House Music y su evolución.</p>
 </section>
 
-<section id="upcoming" class="reveal-blur">
-    <h2 class="reveal-right animated-gradient-text"><i class="fa-solid fa-calendar-days"></i> Próximos Lanzamientos</h2>
-    <div class="upcoming-grid">
-        
-       <div class="upcoming-card reveal">
-            <div class="upcoming-img">
-                <img src="img/8916f27dbc3a93740de23838352c3f40 (1).jpg" alt="Beat On the Drums" loading="lazy">
-                <div class="upcoming-badge">Pronto</div>
+<section id="releases">
+    <h2>Lanzamientos</h2>
+    <div class="carousel-container">
+        <!-- Card 1 -->
+        <div class="release-card">
+            <div class="release-img"><img src="img/0233bd82915a383b95ae9d123bcfea47.jpg" alt="Track"></div>
+            <div class="release-info">
+                <p><strong>T.V.T.V</strong></p>
+                <small>Extintor Bass & Destro5</small>
             </div>
-            <div class="upcoming-date" style="color: var(--neon-orange); font-size: 0.85rem; font-family: 'Space Grotesk', monospace; letter-spacing: 2px;">MAYO 2026</div>
-            <h3 class="release-title" style="margin-bottom:10px; margin-top:5px;">Beat On The Drums</h3>
-            <span class="release-artist" style="justify-content: flex-start;"><i class="fa-solid fa-user-astronaut"></i> Destro5</span>
         </div>
-
-        <div class="upcoming-card reveal">
-            <div class="upcoming-img">
-                <img src="img/0233bd82915a383b95ae9d123bcfea47.jpg" alt="Bironbass Vol 1 Cover" loading="lazy">
-                <div class="upcoming-badge">Pronto</div>
+        <!-- Card 2 -->
+        <div class="release-card">
+            <div class="release-img"><img src="img/8916f27dbc3a93740de23838352c3f40 (1).jpg" alt="Track"></div>
+            <div class="release-info">
+                <p><strong>Beat On The Drums</strong></p>
+                <small>Destro5</small>
             </div>
-            <div class="upcoming-date" style="color: var(--neon-orange); font-size: 0.85rem; font-family: 'Space Grotesk', monospace; letter-spacing: 2px;">JUNIO 2026</div>
-            <h3 class="release-title" style="margin-bottom:10px; margin-top:5px;">T.V.T.V</h3>
-            <span class="release-artist" style="justify-content: flex-start;"><i class="fa-solid fa-user-astronaut"></i> Extintor Bass & Destro5</span>
-        </div>
-
-    </div>
-</section>
-
-<section id="aliados" class="partners-section reveal-scale">
-    <div class="partners-title reveal-blur animated-gradient-text">Aliados Oficiales</div>
-    
-    <div class="partners-wrapper">
-        <div class="partners-track">
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
-            
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
-
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
-        </div>
-        
-        <div class="partners-track">
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
-            
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
-
-            <img src="colabodadores/LOGO APOYO LATINO BLANCO.png" alt="Apoyo Latino" loading="lazy">
-            <img src="colabodadores/LOGOTIPO MUFASA2.png" alt="Mufasa" loading="lazy">
-            <img src="colabodadores/400207948_857727182398372_9134432120210732133_n.-removebg-preview.png" alt="Aliado 3" loading="lazy">
-            <img src="colabodadores/TNP LOGO.png" alt="TNP" loading="lazy">
         </div>
     </div>
 </section>
 
-<div class="footer-separator"></div>
-<footer id="footer" class="reveal">
-    <div class="social">
-        <a href="https://www.instagram.com/urban_house.vzla/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.beatport.com/es/label/urban-house/148584" target="_blank" rel="noopener noreferrer" title="Beatport"><i class="fa-solid fa-play"></i></a>
-        <a href="https://www.traxsource.com/label/75397/urban-house" target="_blank" rel="noopener noreferrer" title="Traxsource"><i class="fa-solid fa-compact-disc"></i></a>
-    </div>
-    
-    <div class="footer-nav">
-        <a href="/">Inicio</a> | 
-        <a href="artistas.html">Artistas</a> | 
-        <a href="samples.html">Samples</a> | 
-        <a href="eventos.html">Eventos</a> | 
-        <a href="demos.html">Demos</a> |
-        <a href="blog.html">Blog</a> 
-    </div>
-
-    <p>&copy; 2026 Urban House Records · Caracas, Venezuela</p>
-    <p style="margin-top: 8px;">Sello discográfico independiente</p>
+<footer style="padding: 40px; text-align: center; opacity: 0.6; font-size: 0.8rem;">
+    <p>&copy; 2026 Urban House Records</p>
 </footer>
 
-<audio id="global-audio-player"></audio>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        
-        // 0. PRELOADER
-        const preloader = document.getElementById('preloader');
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                if(preloader) preloader.classList.add('fade-out');
-                document.body.style.overflow = 'auto';
-                // Trigger title animation after preloader
-                animateTitle();
-            }, 2500);
-        });
-        document.body.style.overflow = 'hidden';
+    // Lógica del menú móvil
+    const btn = document.getElementById('mobile-btn');
+    const menu = document.getElementById('menu');
 
-        // 0.2 LETTER ANIMATION SETUP
-        function animateTitle() {
-            const title = document.getElementById('main-title');
-            if (!title) return;
-            const text = title.textContent;
-            title.textContent = '';
-            [...text].forEach((char, i) => {
-                const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char;
-                span.className = 'letter';
-                span.style.transitionDelay = (i * 0.05) + 's';
-                title.appendChild(span);
-                setTimeout(() => span.classList.add('active'), 100);
-            });
-        }
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        const icon = btn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-xmark');
+    });
 
-        // 0.5 CURSOR GLOW
-        if (window.innerWidth > 900) {
-            const cursorGlow = document.getElementById('cursor-glow');
-            document.addEventListener('mousemove', (e) => {
-                cursorGlow.style.left = e.clientX + 'px';
-                cursorGlow.style.top = e.clientY + 'px';
-            });
-        }
-
-        // 1. HAMBURGER MENU
-        const hamburgerBtn = document.getElementById('hamburger-menu');
-        const navLinksContainer = document.getElementById('nav-links');
-        const hamburgerIcon = hamburgerBtn?.querySelector('i');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        hamburgerBtn?.addEventListener('click', () => {
-            navLinksContainer?.classList.toggle('active');
-            if (navLinksContainer?.classList.contains('active')) {
-                hamburgerIcon?.classList.replace('fa-bars', 'fa-xmark');
-            } else {
-                hamburgerIcon?.classList.replace('fa-xmark', 'fa-bars');
-            }
-        });
-
-        // 2. SMOOTH SCROLL
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId?.startsWith('#')) {
-                    e.preventDefault();
-                    if (window.innerWidth <= 900) {
-                        navLinksContainer?.classList.remove('active');
-                        hamburgerIcon?.classList.replace('fa-xmark', 'fa-bars');
-                    }
-                    const targetEl = document.querySelector(targetId);
-                    if (targetEl) {
-                        window.scrollTo({ top: targetEl.offsetTop - 100, behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // 3. AUDIO PLAYER & 3D TILT
-        const audioPlayer = document.getElementById('global-audio-player');
-        let currentCard = null;
-
-        document.querySelectorAll('.release-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const audioSrc = this.getAttribute('data-audio');
-                const icon = this.querySelector('.play-icon');
-                if (!audioSrc) return;
-
-                if (currentCard === this && !audioPlayer.paused) {
-                    audioPlayer.pause();
-                    this.classList.remove('playing');
-                    icon?.classList.replace('fa-circle-pause', 'fa-circle-play');
-                } else {
-                    document.querySelectorAll('.release-card').forEach(c => {
-                        c.classList.remove('playing');
-                        c.querySelector('.play-icon')?.classList.replace('fa-circle-pause', 'fa-circle-play');
-                    });
-                    if (currentCard !== this) { audioPlayer.src = audioSrc; currentCard = this; }
-                    audioPlayer.play().catch(e => console.log(e));
-                    this.classList.add('playing');
-                    icon?.classList.replace('fa-circle-play', 'fa-circle-pause');
-                }
-            });
-
-            if (window.innerWidth > 900) {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = (e.clientX - rect.left) / rect.width - 0.5;
-                    const y = (e.clientY - rect.top) / rect.height - 0.5;
-                    card.style.transform = `perspective(1000px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) translateY(-10px) scale(1.02)`;
-                });
-                card.addEventListener('mouseleave', () => card.style.transform = '');
-            }
-        });
-
-        // 4. NAV & SCROLL INDICATOR
-        const glassNav = document.querySelector('.glass-nav');
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-        window.addEventListener('scroll', () => {
-            glassNav?.classList.toggle('scrolled', window.scrollY > 80);
-            if (scrollIndicator) scrollIndicator.style.opacity = Math.max(0, 1 - window.scrollY / 400);
-        });
-
-        // 4.5 CAROUSEL LOGIC
-        const carousel = document.getElementById('carousel-container');
-        const nextBtn = document.getElementById('next-btn');
-        const prevBtn = document.getElementById('prev-btn');
-
-        if (carousel && nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => {
-                const cardWidth = carousel.querySelector('.release-card').offsetWidth + 30;
-                carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
-            });
-            prevBtn.addEventListener('click', () => {
-                const cardWidth = carousel.querySelector('.release-card').offsetWidth + 30;
-                carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-            });
-        }
-
-        // 5. ENHANCED REVEAL OBSERVER
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const delay = entry.target.dataset.delay || 0;
-                    setTimeout(() => entry.target.classList.add('active'), delay * 150);
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur, .reveal-width').forEach((el, i) => {
-            el.dataset.delay = i % 4;
-            revealObserver.observe(el);
-        });
-
-        // 6. PARALLAX
-        const headerContent = document.querySelector('.header-content');
-        window.addEventListener('scroll', () => {
-            if (headerContent && window.scrollY < window.innerHeight) {
-                const val = window.scrollY * 0.4;
-                headerContent.style.transform = `translateY(${val}px)`;
-                headerContent.style.opacity = 1 - (window.scrollY / (window.innerHeight * 0.7));
-            }
+    // Cerrar menú al hacer click en un link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+            btn.querySelector('i').classList.add('fa-bars');
+            btn.querySelector('i').classList.remove('fa-xmark');
         });
     });
 </script>
+
 </body>
 </html>
